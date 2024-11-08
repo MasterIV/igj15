@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://p44vwuqmgy7q"]
+
+[ext_resource type="FontFile" uid="uid://dt5r1vcyd0cly" path="res://themes/LiberationSans-Bold.ttf" id="1_h6bpj"]
+
+[resource]
+default_font = ExtResource("1_h6bpj")
+default_font_size = 15
