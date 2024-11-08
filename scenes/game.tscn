@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
 [ext_resource type="Texture2D" uid="uid://nrop4pfy2sb7" path="res://assets/background/default.png" id="3_ujyjc"]
-[ext_resource type="PackedScene" uid="uid://d37ukx6ghaeok" path="res://scenes/unit.tscn" id="4_a7tnu"]
+[ext_resource type="PackedScene" uid="uid://d37ukx6ghaeok" path="res://scenes/entity/unit.tscn" id="4_a7tnu"]
 [ext_resource type="JSON" path="res://data/archer.json" id="5_s6y72"]
 [ext_resource type="JSON" path="res://data/warrior.json" id="6_ca1rp"]
 [ext_resource type="JSON" path="res://data/wizard.json" id="7_mn1pt"]
@@ -24,9 +24,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -33.0
-offset_top = 70.0
+offset_top = -100.0
 offset_right = 34.0625
-offset_bottom = 101.0
+offset_bottom = -69.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -43,15 +43,22 @@ script = ExtResource("1_xq41r")
 
 [node name="Units" type="Node" parent="."]
 
-[node name="Archer" parent="Units" instance=ExtResource("4_a7tnu")]
-file = ExtResource("5_s6y72")
+[node name="Wizard" parent="Units" instance=ExtResource("4_a7tnu")]
+position = Vector2(28, 67)
+file = ExtResource("7_mn1pt")
 
 [node name="Warrior" parent="Units" instance=ExtResource("4_a7tnu")]
+position = Vector2(49, 32)
 file = ExtResource("6_ca1rp")
 
-[node name="Wizard" parent="Units" instance=ExtResource("4_a7tnu")]
-file = ExtResource("7_mn1pt")
+[node name="Archer" parent="Units" instance=ExtResource("4_a7tnu")]
+position = Vector2(32, -5)
+file = ExtResource("5_s6y72")
 
 [connection signal="focus_exited" from="LineEdit" to="LineEdit" method="_on_focus_exited"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
+
+[editable path="Units/Wizard"]
+[editable path="Units/Warrior"]
+[editable path="Units/Archer"]

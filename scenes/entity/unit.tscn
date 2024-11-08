@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://d37ukx6ghaeok"]
+
+[ext_resource type="Script" path="res://scripts/unit.gd" id="1_gxtnv"]
+[ext_resource type="SpriteFrames" uid="uid://j1b1dp86ql7c" path="res://assets/hero.tres" id="2_rp2y7"]
+
+[node name="Unit" type="Node2D"]
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_gxtnv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 20.0
+offset_right = 60.0
+offset_bottom = 40.0
+text = "volley"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_rp2y7")
