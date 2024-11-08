@@ -15,10 +15,19 @@ run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Common="*res://scripts/common.gd"
+
 [display]
 
 window/size/viewport_width=1028
 window/size/viewport_height=896
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 
 [rendering]
 
