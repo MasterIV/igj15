@@ -21,7 +21,7 @@ Common="*res://scripts/common.gd"
 
 [display]
 
-window/size/viewport_width=1028
+window/size/viewport_width=1376
 window/size/viewport_height=896
 
 [editor]

@@ -1,10 +1,8 @@
 extends Node2D
 
-
 @onready var units = [$Units/Archer,  $Units/Warrior, $Units/Wizard]
 @onready var input: LineEdit = $LineEdit
 
-	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
