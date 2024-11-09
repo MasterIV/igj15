@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=23 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
@@ -17,20 +17,18 @@
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="9_fc4tp"]
 [ext_resource type="SpriteFrames" uid="uid://bweds27nfr173" path="res://assets/vfx/wizard_attack.tres" id="10_lpdoi"]
 [ext_resource type="SpriteFrames" uid="uid://cb5li6pwgwmt0" path="res://assets/dragon.tres" id="12_kuip4"]
+[ext_resource type="Texture2D" uid="uid://oxchegkh2snu" path="res://assets/ui/health_empty.png" id="18_n107t"]
+[ext_resource type="Texture2D" uid="uid://rpd1beujgebe" path="res://assets/ui/health_full.png" id="19_3uunb"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrkra"]
-bg_color = Color(0, 0, 0, 0.894118)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cvr4h"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0q7n"]
-bg_color = Color(0.841442, 0, 0.214334, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_010dk"]
+texture = ExtResource("18_n107t")
+modulate_color = Color(0.254902, 0, 0.027451, 0.882353)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5mgs"]
+texture = ExtResource("19_3uunb")
+axis_stretch_horizontal = 1
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_m2d46")
@@ -181,6 +179,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_jvgll")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cvr4h")
 alignment = 1
 expand_to_text_length = true
 context_menu_enabled = false
@@ -199,14 +198,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
+offset_left = -70.0
 offset_top = -110.0
-offset_right = 100.0
-offset_bottom = -102.0
+offset_right = 69.0
+offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_vrkra")
-theme_override_styles/fill = SubResource("StyleBoxFlat_m0q7n")
+theme_override_styles/background = SubResource("StyleBoxTexture_010dk")
+theme_override_styles/fill = SubResource("StyleBoxTexture_q5mgs")
 value = 100.0
 show_percentage = false
 
