@@ -60,7 +60,7 @@ func select_word():
 			label.text = word.split(" ")[0]
 
 func _on_animation_looped() -> void:
-	if sprite.animation == "attack":
+	if sprite.animation == "attack" or sprite.animation == "shrug":
 		sprite.animation = "default"
 		select_word()
 		available = true

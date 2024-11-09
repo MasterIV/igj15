@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_animation_looped() -> void:
-	if sprite.animation == "attack":
+	if sprite.animation == "attack" or sprite.animation == "shrug":
 		sprite.animation = "default"
 		word = data.pick_random()
 		label.text = word
