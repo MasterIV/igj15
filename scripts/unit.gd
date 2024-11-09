@@ -4,13 +4,18 @@ extends Node2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: RichTextLabel = $RichTextLabel
 @onready var harmanimation: AnimatedSprite2D = $Harm
+@onready var attackanimation: AnimatedSprite2D = $Attack
 
 var data: Array = []
 var word: String
 var available: bool = true
 
-func trigger():
-	sprite.animation = "attack"
+func trigger(success: bool):
+	if success:
+		sprite.animation = "attack"
+		attackanimation.play()
+	else:
+		sprite.animation = "shrug"
 	label.text = ""
 	available = false
 

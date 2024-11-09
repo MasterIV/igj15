@@ -57,9 +57,17 @@ script = ExtResource("1_gxtnv")
 z_index = 1
 position = Vector2(0, -1)
 sprite_frames = ExtResource("2_jekmd")
-animation = &"scratch"
 autoplay = "default"
-frame_progress = 0.328684
+
+[node name="Attack" type="AnimatedSprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_anntj")
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = ExtResource("3_dgpmj")
+autoplay = "default"
+frame_progress = 0.00653126
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 20.0
@@ -73,13 +81,6 @@ autowrap_mode = 0
 shortcut_keys_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_anntj")
-scale = Vector2(-1, 1)
-sprite_frames = ExtResource("3_dgpmj")
-autoplay = "default"
-frame_progress = 0.00653126
 
 [node name="HitFlash" type="AnimationPlayer" parent="."]
 libraries = {
