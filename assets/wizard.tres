@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://c3h4ug80aqnxq"]
+[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://c3h4ug80aqnxq"]
 
 [ext_resource type="Texture2D" uid="uid://cu8qd7l1fux8k" path="res://assets/units/wizard_attack.png" id="1_gx6wu"]
 [ext_resource type="Texture2D" uid="uid://bpa0b00nijauy" path="res://assets/units/wizard_idle.png" id="2_p4trd"]
+[ext_resource type="Texture2D" uid="uid://br1v8i2dywxa5" path="res://assets/units/wizard_shrug.png" id="3_gdukr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1687j"]
 atlas = ExtResource("1_gx6wu")
@@ -61,6 +62,22 @@ region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yptrr"]
 atlas = ExtResource("2_p4trd")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5gt7"]
+atlas = ExtResource("3_gdukr")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie6my"]
+atlas = ExtResource("3_gdukr")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc24y"]
+atlas = ExtResource("3_gdukr")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t64d"]
+atlas = ExtResource("3_gdukr")
 region = Rect2(300, 0, 100, 100)
 
 [resource]
@@ -124,5 +141,28 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5gt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie6my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc24y")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_3t64d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc24y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie6my")
+}],
+"loop": true,
+"name": &"shrug",
 "speed": 8.0
 }]

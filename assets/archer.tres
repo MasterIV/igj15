@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://citbrtor45p6w"]
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://citbrtor45p6w"]
 
 [ext_resource type="Texture2D" uid="uid://bhwal16ru8rux" path="res://assets/units/archer_attack.png" id="1_ked42"]
 [ext_resource type="Texture2D" uid="uid://b7hfvem3p4e3o" path="res://assets/units/archer_idle.png" id="2_4koyw"]
+[ext_resource type="Texture2D" uid="uid://buddgs1jdho4t" path="res://assets/units/archer_shrug.png" id="3_wd2lf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2pdh6"]
 atlas = ExtResource("1_ked42")
@@ -57,6 +58,22 @@ region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd1xc"]
 atlas = ExtResource("2_4koyw")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qwkp"]
+atlas = ExtResource("3_wd2lf")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6fgl"]
+atlas = ExtResource("3_wd2lf")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jywov"]
+atlas = ExtResource("3_wd2lf")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vycc"]
+atlas = ExtResource("3_wd2lf")
 region = Rect2(300, 0, 100, 100)
 
 [resource]
@@ -121,4 +138,27 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qwkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6fgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jywov")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_1vycc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jywov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6fgl")
+}],
+"loop": true,
+"name": &"shrug",
+"speed": 8.0
 }]
