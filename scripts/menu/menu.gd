@@ -36,7 +36,6 @@ func _on_credits_button_pressed() -> void:
 	$InfoText.newText("Credits:
 created @IGJam15, 2024
 
-Anna Leonhart (CEO)
 Judith Gastell (Head of 2D)
 Tamara Meyendriesch (Expert of 2D)
 Tobias Rojahn (Expert Senior Dev)
