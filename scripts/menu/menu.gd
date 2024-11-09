@@ -12,6 +12,18 @@ func _process(delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
+	$MainMenu.visible = false
+	$InfoText.visible = false
+	$StartGameText.visible = true
+	$ButtonClicked.play()
+	await get_tree().create_timer(1.0).timeout
+	$StartGameText/Number.countdown()
+	await get_tree().create_timer(1.0).timeout
+	$StartGameText/Number.countdown()
+	await get_tree().create_timer(1.0).timeout
+	$MainMenu.visible = true
+	$InfoText.visible = true
+	$StartGameText.visible = false
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
@@ -20,6 +32,7 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
+	$ButtonClicked.play()
 	$InfoText.newText("Credits:
 created @IGJam15, 2024
 
