@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func _on_line_edit_text_changed(new_text: String) -> void:
 	for unit in units:
+		unit.typing(new_text)
 		if unit.word == new_text and unit.available:
 			unit.trigger(true)
 			enemy.harm(unit.name)

@@ -22,6 +22,9 @@ func trigger(success: bool):
 func harm(type: String):
 	harmanimation.play(type)
 
+func typing(text: String):
+	pass
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	data = Common.load_data(file)

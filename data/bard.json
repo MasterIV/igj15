@@ -1,4 +1,14 @@
 {
-	"typo": ["ballard", "inspire", "harmony"],
-	"long": ["opera of heroic victory"],
+	"typo": [
+		"ballard",
+		"inspire",
+		"harmony"
+	],
+	"long": [
+		"opera of heroic victory"
+	],
+	"continuous": [
+		"epic symphony",
+		"harmonic epos"
+	]
 }

@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=17 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="3_jvgll"]
 [ext_resource type="Texture2D" uid="uid://nrop4pfy2sb7" path="res://assets/background/default.png" id="3_ujyjc"]
 [ext_resource type="PackedScene" uid="uid://d37ukx6ghaeok" path="res://scenes/entity/unit.tscn" id="4_a7tnu"]
-[ext_resource type="SpriteFrames" uid="uid://c8cg07x71ltde" path="res://assets/units/archer_attack.tres" id="5_nof7u"]
 [ext_resource type="JSON" path="res://data/archer.json" id="5_s6y72"]
 [ext_resource type="JSON" path="res://data/warrior.json" id="6_ca1rp"]
 [ext_resource type="SpriteFrames" uid="uid://x0oba8hy47te" path="res://assets/warrior.tres" id="6_i1h1i"]
@@ -47,18 +46,6 @@ position = Vector2(-6, -22)
 [node name="Archer" parent="Units" instance=ExtResource("4_a7tnu")]
 position = Vector2(32, -5)
 file = ExtResource("5_s6y72")
-
-[node name="Attack" parent="Units/Archer" index="1"]
-position = Vector2(-6, 8)
-scale = Vector2(-1, -1)
-sprite_frames = ExtResource("5_nof7u")
-frame = 12
-frame_progress = 1.0
-
-[node name="AnimatedSprite2D" parent="Units/Archer" index="2"]
-z_index = 1
-animation = &"attack"
-frame_progress = 0.943718
 
 [node name="RichTextLabel" parent="Units/Archer" index="3"]
 text = "archer"
