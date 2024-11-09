@@ -39,8 +39,8 @@ func _process(delta: float) -> void:
 	
 func create_typo(text: String) -> String:
 	var l: int = len(text)
-	var a: int = rng.randi_range(0, l)
-	var b: int = rng.randi_range(0, l)
+	var a: int = rng.randi_range(0, l-1)
+	var b: int = rng.randi_range(0, l-1)
 	var c: String = text[a]
 	text[a] = text[b]
 	text[b] = c

@@ -57,6 +57,7 @@ script = ExtResource("1_gxtnv")
 z_index = 1
 position = Vector2(0, -1)
 sprite_frames = ExtResource("2_jekmd")
+animation = &"scratch"
 autoplay = "default"
 
 [node name="Attack" type="AnimatedSprite2D" parent="."]
