@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_animation_looped() -> void:
-	print(sprite.animation)
 	if sprite.animation == "attack":
 		sprite.animation = "default"
 		word = data.pick_random()
