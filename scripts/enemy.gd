@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var icons: GridContainer = $Icons
+@onready var harmanimation: AnimatedSprite2D = $HarmAnimation
 
 
 var difficulty: int   = 8
@@ -36,6 +37,7 @@ func harm(type: String) -> bool:
 		
 	var w = weaknesses.pop_front()
 	w["icon"].queue_free()
+	harmanimation.play(type)
 	
 	if len(weaknesses) < 1:
 		pass #victory

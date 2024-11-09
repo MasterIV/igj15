@@ -171,7 +171,6 @@ columns = 5
 [node name="HarmAnimation" type="AnimatedSprite2D" parent="Enemy"]
 sprite_frames = ExtResource("17_1intl")
 animation = &"Wizard"
-frame_progress = 0.692654
 
 [node name="LineEdit" type="LineEdit" parent="."]
 anchors_preset = 8
