@@ -9,7 +9,7 @@
 [ext_resource type="JSON" path="res://data/archer.json" id="5_s6y72"]
 [ext_resource type="JSON" path="res://data/warrior.json" id="6_ca1rp"]
 [ext_resource type="SpriteFrames" uid="uid://x0oba8hy47te" path="res://assets/warrior.tres" id="6_i1h1i"]
-[ext_resource type="SpriteFrames" path="res://assets/units/empty_attack.tres" id="7_6i45f"]
+[ext_resource type="SpriteFrames" uid="uid://b7mwwerqsjjvu" path="res://assets/units/empty_attack.tres" id="7_6i45f"]
 [ext_resource type="JSON" path="res://data/wizard.json" id="7_mn1pt"]
 [ext_resource type="JSON" path="res://data/bard.json" id="7_nlrmn"]
 [ext_resource type="Script" path="res://scripts/bard.gd" id="9_5egey"]
