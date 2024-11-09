@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dei732lbu1s7t"]
 
-[ext_resource type="Script" path="res://scenes/menu.gd" id="1_2l6ls"]
+[ext_resource type="Script" path="res://scripts/menu/menu.gd" id="1_2l6ls"]
 [ext_resource type="Theme" uid="uid://dpull7brvgmlv" path="res://themes/menu_text.tres" id="1_ij171"]
 [ext_resource type="Texture2D" uid="uid://dcoxc3qx1psck" path="res://assets/background/menu_background.jpg" id="1_noxxp"]
-[ext_resource type="Script" path="res://scenes/info_text.gd" id="4_ntoya"]
+[ext_resource type="Script" path="res://scripts/menu/info_text.gd" id="4_ntoya"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_2l6ls")
@@ -36,7 +36,6 @@ text = "Credits"
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
 theme = ExtResource("1_ij171")
-button_mask = 0
 text = "Exit"
 
 [node name="InfoText" type="RichTextLabel" parent="."]
