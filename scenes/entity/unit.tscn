@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/unit.gd" id="1_gxtnv"]
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="2_cpwka"]
-[ext_resource type="SpriteFrames" uid="uid://j1b1dp86ql7c" path="res://assets/hero.tres" id="2_rp2y7"]
+[ext_resource type="SpriteFrames" uid="uid://citbrtor45p6w" path="res://assets/archer.tres" id="3_dgpmj"]
 
 [node name="Unit" type="Node2D"]
 z_as_relative = false
@@ -23,7 +23,9 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_rp2y7")
+scale = Vector2(-1, 1)
+sprite_frames = ExtResource("3_dgpmj")
 autoplay = "default"
+frame_progress = 0.883958
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]

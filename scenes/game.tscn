@@ -18,6 +18,7 @@ bg_color = Color(0, 0, 0, 0.894118)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0q7n"]
 bg_color = Color(0.841442, 0, 0.214334, 1)
@@ -64,22 +65,34 @@ script = ExtResource("1_xq41r")
 [node name="Units" type="Node2D" parent="."]
 position = Vector2(45, -18)
 
-[node name="Bard" parent="Units" instance=ExtResource("4_a7tnu")]
-position = Vector2(54, 94)
-script = ExtResource("9_5egey")
-file = ExtResource("7_nlrmn")
+[node name="Archer" parent="Units" instance=ExtResource("4_a7tnu")]
+position = Vector2(32, -5)
+file = ExtResource("5_s6y72")
 
-[node name="Wizard" parent="Units" instance=ExtResource("4_a7tnu")]
-position = Vector2(28, 67)
-file = ExtResource("7_mn1pt")
+[node name="RichTextLabel" parent="Units/Archer" index="0"]
+text = "archer"
 
 [node name="Warrior" parent="Units" instance=ExtResource("4_a7tnu")]
 position = Vector2(49, 32)
 file = ExtResource("6_ca1rp")
 
-[node name="Archer" parent="Units" instance=ExtResource("4_a7tnu")]
-position = Vector2(32, -5)
-file = ExtResource("5_s6y72")
+[node name="RichTextLabel" parent="Units/Warrior" index="0"]
+text = "warrior"
+
+[node name="Wizard" parent="Units" instance=ExtResource("4_a7tnu")]
+position = Vector2(28, 67)
+file = ExtResource("7_mn1pt")
+
+[node name="RichTextLabel" parent="Units/Wizard" index="0"]
+text = "wizard"
+
+[node name="Bard" parent="Units" instance=ExtResource("4_a7tnu")]
+position = Vector2(54, 94)
+script = ExtResource("9_5egey")
+file = ExtResource("7_nlrmn")
+
+[node name="RichTextLabel" parent="Units/Bard" index="0"]
+text = "bard"
 
 [node name="Enemy" type="Node2D" parent="."]
 position = Vector2(-103, 22)
@@ -116,7 +129,7 @@ show_percentage = false
 [connection signal="animation_looped" from="Enemy/AnimatedSprite2D" to="Enemy" method="_on_animation_looped"]
 [connection signal="timeout" from="Enemy/AttackTimer" to="." method="_on_attack_timer_timeout"]
 
-[editable path="Units/Bard"]
-[editable path="Units/Wizard"]
-[editable path="Units/Warrior"]
 [editable path="Units/Archer"]
+[editable path="Units/Warrior"]
+[editable path="Units/Wizard"]
+[editable path="Units/Bard"]
