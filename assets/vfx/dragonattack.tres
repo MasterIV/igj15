@@ -142,6 +142,9 @@ region = Rect2(1020, 0, 85, 85)
 [resource]
 animations = [{
 "frames": [{
+"duration": 5.0,
+"texture": null
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4lgrr")
 }, {
@@ -221,6 +224,9 @@ animations = [{
 "speed": 0.0
 }, {
 "frames": [{
+"duration": 50.0,
+"texture": null
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_esa3y")
 }, {

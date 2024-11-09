@@ -132,7 +132,7 @@ sprite_frames = ExtResource("7_6i45f")
 [node name="AnimatedSprite2D" parent="Units/Bard" index="2"]
 z_index = 41
 sprite_frames = ExtResource("14_01dul")
-frame_progress = 0.326127
+frame_progress = 0.00297784
 
 [node name="RichTextLabel" parent="Units/Bard" index="3"]
 z_index = 50
@@ -147,6 +147,7 @@ position = Vector2(0, -14)
 scale = Vector2(-1, 1)
 sprite_frames = ExtResource("12_kuip4")
 autoplay = "default"
+frame_progress = 0.52694
 
 [node name="AttackTimer" type="Timer" parent="Enemy"]
 wait_time = 5.0
