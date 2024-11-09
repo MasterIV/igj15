@@ -30,15 +30,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func harm(type: String):
-	if len(weaknesses) > 0 and type == weaknesses[0]["unit"]:
-		var w = weaknesses.pop_front()
-		w["icon"].queue_free()
+func harm(type: String) -> bool:
+	if len(weaknesses) < 1 or type != weaknesses[0]["unit"]:
+		return false
 		
-		if len(weaknesses) < 1:
-			pass #victory
-		else:
-			weaknesses[0]["icon"].texture = units[weaknesses[0]["unit"]][1]
+	var w = weaknesses.pop_front()
+	w["icon"].queue_free()
+	
+	if len(weaknesses) < 1:
+		pass #victory
+	else:
+		weaknesses[0]["icon"].texture = units[weaknesses[0]["unit"]][1]
+		
+	return true
 
 func attack():
 	sprite.animation = "attack"
