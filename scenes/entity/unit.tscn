@@ -24,3 +24,6 @@ drag_and_drop_selection_enabled = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_rp2y7")
+autoplay = "default"
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]

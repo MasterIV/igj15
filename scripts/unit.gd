@@ -1,17 +1,17 @@
 extends Node2D
 
 @export var file: Resource
-@onready var sprite = $AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: RichTextLabel = $RichTextLabel
 
 var data: Array = []
 var word: String
-var available = true
+var available: bool = true
 
 func trigger():
 	sprite.animation = "attack"
-	word = data.pick_random()
-	
+	label.text = ""
+	available = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +19,14 @@ func _ready() -> void:
 	word = data.pick_random()
 	label.text = word
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _on_animation_looped() -> void:
+	print(sprite.animation)
+	if sprite.animation == "attack":
+		sprite.animation = "default"
+		word = data.pick_random()
+		label.text = word
+		available = true
