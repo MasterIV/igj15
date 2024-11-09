@@ -89,8 +89,7 @@ text = "wizard"
 
 [node name="AnimatedSprite2D" parent="Units/Wizard" index="1"]
 sprite_frames = ExtResource("9_bpfvk")
-animation = &"attack"
-frame_progress = 0.889313
+frame_progress = 0.526079
 
 [node name="Bard" parent="Units" instance=ExtResource("4_a7tnu")]
 position = Vector2(54, 94)
