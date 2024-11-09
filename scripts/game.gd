@@ -22,3 +22,7 @@ func _on_attack_timer_timeout() -> void:
 	hp -= 5
 	health_bar.value = hp
 	enemy.attack()
+	
+	if hp <= 0:
+		# you died!
+		get_tree().reload_current_scene()

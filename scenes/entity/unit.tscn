@@ -1,8 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://d37ukx6ghaeok"]
+[gd_scene load_steps=9 format=3 uid="uid://d37ukx6ghaeok"]
 
 [ext_resource type="Script" path="res://scripts/unit.gd" id="1_gxtnv"]
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="2_cpwka"]
 [ext_resource type="SpriteFrames" uid="uid://citbrtor45p6w" path="res://assets/archer.tres" id="3_dgpmj"]
+[ext_resource type="Shader" uid="uid://nltinbl0i81g" path="res://scenes/entity/hit_flash.tres" id="3_i568x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_anntj"]
+shader = ExtResource("3_i568x")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_iw26t"]
+resource_name = "flash"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_5wchy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nnki"]
+_data = {
+"RESET": SubResource("Animation_5wchy"),
+"flash": SubResource("Animation_iw26t")
+}
 
 [node name="Unit" type="Node2D"]
 z_as_relative = false
@@ -23,9 +66,15 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_anntj")
 scale = Vector2(-1, 1)
 sprite_frames = ExtResource("3_dgpmj")
 autoplay = "default"
-frame_progress = 0.883958
+frame_progress = 0.00653126
+
+[node name="HitFlash" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6nnki")
+}
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]
