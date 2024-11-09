@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d37ukx6ghaeok"]
+[gd_scene load_steps=10 format=3 uid="uid://d37ukx6ghaeok"]
 
 [ext_resource type="Script" path="res://scripts/unit.gd" id="1_gxtnv"]
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="2_cpwka"]
-[ext_resource type="SpriteFrames" uid="uid://citbrtor45p6w" path="res://assets/archer.tres" id="3_dgpmj"]
+[ext_resource type="SpriteFrames" uid="uid://d7qckuaooitf" path="res://assets/vfx/dragonattack.tres" id="2_jekmd"]
+[ext_resource type="SpriteFrames" uid="uid://cb5uk007visqj" path="res://assets/archer.tres" id="3_dgpmj"]
 [ext_resource type="Shader" uid="uid://nltinbl0i81g" path="res://scenes/entity/hit_flash.tres" id="3_i568x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_anntj"]
@@ -51,6 +52,14 @@ _data = {
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_gxtnv")
+
+[node name="Harm" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -1)
+sprite_frames = ExtResource("2_jekmd")
+animation = &"scratch"
+autoplay = "default"
+frame_progress = 0.328684
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 20.0
