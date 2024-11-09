@@ -3,6 +3,7 @@ extends Node2D
 @onready var units = [$Units/Archer,  $Units/Warrior, $Units/Wizard, $Units/Bard]
 @onready var enemy = $Enemy
 @onready var input: LineEdit = $LineEdit
+@onready var health_bar: ProgressBar = $HealthBar
 
 
 var hp: int = 100
@@ -19,4 +20,5 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 
 func _on_attack_timer_timeout() -> void:
 	hp -= 5
+	health_bar.value = hp
 	enemy.attack()

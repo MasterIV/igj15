@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=15 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
@@ -12,6 +12,19 @@
 [ext_resource type="Script" path="res://scripts/bard.gd" id="9_5egey"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="9_fc4tp"]
 [ext_resource type="SpriteFrames" uid="uid://j1b1dp86ql7c" path="res://assets/hero.tres" id="10_04tct"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrkra"]
+bg_color = Color(0, 0, 0, 0.894118)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0q7n"]
+bg_color = Color(0.841442, 0, 0.214334, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_m2d46")
@@ -79,6 +92,23 @@ autoplay = "default"
 [node name="AttackTimer" type="Timer" parent="Enemy"]
 wait_time = 5.0
 autostart = true
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -110.0
+offset_right = 100.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_vrkra")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m0q7n")
+value = 100.0
+show_percentage = false
 
 [connection signal="focus_exited" from="LineEdit" to="LineEdit" method="_on_focus_exited"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
