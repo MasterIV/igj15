@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://dei732lbu1s7t"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_2l6ls"]
+[ext_resource type="Theme" uid="uid://dpull7brvgmlv" path="res://themes/menu_text.tres" id="1_ij171"]
+[ext_resource type="Texture2D" uid="uid://dcoxc3qx1psck" path="res://assets/background/menu_background.jpg" id="1_noxxp"]
+[ext_resource type="Script" path="res://scenes/info_text.gd" id="4_ntoya"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_2l6ls")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(695.5, 554.5)
+scale = Vector2(1.35059, 1.13574)
+texture = ExtResource("1_noxxp")
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 250.0
+offset_bottom = 292.0
+theme = ExtResource("1_ij171")
+theme_override_constants/separation = 25
+
+[node name="StartButton" type="Button" parent="MainMenu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+theme = ExtResource("1_ij171")
+text = "Start"
+
+[node name="CreditsButton" type="Button" parent="MainMenu"]
+layout_mode = 2
+theme = ExtResource("1_ij171")
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="MainMenu"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+theme = ExtResource("1_ij171")
+button_mask = 0
+text = "Exit"
+
+[node name="InfoText" type="RichTextLabel" parent="."]
+offset_left = 350.0
+offset_top = 50.0
+offset_right = 1342.0
+offset_bottom = 1058.0
+theme = ExtResource("1_ij171")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Welcome Dungeon Dwellers!
+
+Will you slay the horrific Bottleneck Dragon? Or will the Dragon feed on your corpses?
+
+Who knows!"
+script = ExtResource("4_ntoya")
+
+[connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainMenu/ExitButton" to="." method="_on_exit_button_pressed"]
