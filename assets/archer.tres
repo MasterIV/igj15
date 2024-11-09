@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://cb5uk007visqj"]
+[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://citbrtor45p6w"]
 
 [ext_resource type="Texture2D" uid="uid://bhwal16ru8rux" path="res://assets/units/archer_attack.png" id="1_ked42"]
 [ext_resource type="Texture2D" uid="uid://b7hfvem3p4e3o" path="res://assets/units/archer_idle.png" id="2_4koyw"]
