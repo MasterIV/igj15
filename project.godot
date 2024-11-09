@@ -23,6 +23,7 @@ Common="*res://scripts/common.gd"
 
 window/size/viewport_width=1376
 window/size/viewport_height=896
+window/stretch/mode="viewport"
 
 [editor]
 
