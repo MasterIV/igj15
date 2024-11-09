@@ -22,7 +22,10 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 func _on_attack_timer_timeout() -> void:
 	hp -= 5
 	health_bar.value = hp
-	enemy.attack()
+	
+	var type = ["scratch", "bite"].pick_random()
+	units.pick_random().harm(type)
+	enemy.attack(type)
 	
 	if hp <= 0:
 		# you died!

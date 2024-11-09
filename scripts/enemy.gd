@@ -44,7 +44,7 @@ func harm(type: String) -> bool:
 		
 	return true
 
-func attack():
+func attack(type: String):
 	sprite.animation = "attack"
 
 func _on_animation_looped() -> void:
