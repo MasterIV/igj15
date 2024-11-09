@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://caua3ipaqxan0"
+=======
+uid="uid://b5y2nxnbtc4kk"
+>>>>>>> 204f42dc884dfb02f634f69e4a78bb9805e2ee6f
 path="res://.godot/imported/dragon_bite.png-5ed7a92120732f51473a9588d0d34341.ctex"
 metadata={
 "vram_texture": false
