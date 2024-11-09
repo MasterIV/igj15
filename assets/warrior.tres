@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://bapkqqd2rftf6"]
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://x0oba8hy47te"]
 
 [ext_resource type="Texture2D" uid="uid://chx4o0xw6nx3e" path="res://assets/units/warrior_attack.png" id="1_nafj3"]
 [ext_resource type="Texture2D" uid="uid://bkn2d48r6y3gy" path="res://assets/units/warrior_idle.png" id="2_1mrd6"]

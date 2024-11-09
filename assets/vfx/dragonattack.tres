@@ -1,7 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=37 format=3 uid="uid://d7qckuaooitf"]
+[gd_resource type="SpriteFrames" load_steps=37 format=3 uid="uid://m1enwt62qcnh"]
 
-[ext_resource type="Texture2D" uid="uid://caua3ipaqxan0" path="res://assets/vfx/dragon_bite.png" id="1_grogo"]
-[ext_resource type="Texture2D" uid="uid://cay3aupj6oyvp" path="res://assets/vfx/dragon_scratch.png" id="2_12i7u"]
+[ext_resource type="Texture2D" uid="uid://caqhfj6dfmpcp" path="res://assets/vfx/dragon_bite.png" id="1_grogo"]
+[ext_resource type="Texture2D" uid="uid://b7qiabshgp12m" path="res://assets/vfx/dragon_scratch.png" id="2_12i7u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4lgrr"]
 atlas = ExtResource("1_grogo")
