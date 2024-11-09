@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mv7a3b8kexeb"
-path="res://.godot/imported/archer_attack.png-870354f7c315329923d7777725e68f76.ctex"
+uid="uid://brnhf3w1wm0yj"
+path="res://.godot/imported/warrior_active.png-96e9647c26c129981f6a4d7a83198486.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vfx/archer_attack.png"
-dest_files=["res://.godot/imported/archer_attack.png-870354f7c315329923d7777725e68f76.ctex"]
+source_file="res://assets/icons/warrior_active.png"
+dest_files=["res://.godot/imported/warrior_active.png-96e9647c26c129981f6a4d7a83198486.ctex"]
 
 [params]
 

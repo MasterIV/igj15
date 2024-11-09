@@ -81,7 +81,7 @@ file = ExtResource("7_nlrmn")
 text = "bard"
 
 [node name="Enemy" type="Node2D" parent="."]
-position = Vector2(-103, 22)
+position = Vector2(-85, 12)
 script = ExtResource("9_fc4tp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
@@ -104,7 +104,7 @@ offset_right = 40.0
 offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 6
+columns = 5
 
 [node name="HarmAnimation" type="AnimatedSprite2D" parent="Enemy"]
 
