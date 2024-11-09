@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=17 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
@@ -7,41 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://d37ukx6ghaeok" path="res://scenes/entity/unit.tscn" id="4_a7tnu"]
 [ext_resource type="JSON" path="res://data/archer.json" id="5_s6y72"]
 [ext_resource type="JSON" path="res://data/warrior.json" id="6_ca1rp"]
-[ext_resource type="SpriteFrames" path="res://assets/warrior.tres" id="6_i1h1i"]
+[ext_resource type="SpriteFrames" uid="uid://x0oba8hy47te" path="res://assets/warrior.tres" id="6_i1h1i"]
 [ext_resource type="JSON" path="res://data/wizard.json" id="7_mn1pt"]
 [ext_resource type="JSON" path="res://data/bard.json" id="7_nlrmn"]
 [ext_resource type="Script" path="res://scripts/bard.gd" id="9_5egey"]
 [ext_resource type="SpriteFrames" uid="uid://c3h4ug80aqnxq" path="res://assets/wizard.tres" id="9_bpfvk"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="9_fc4tp"]
-[ext_resource type="Texture2D" uid="uid://2dquxwns5xox" path="res://assets/units/dragon_attack.png" id="12_abbge"]
-[ext_resource type="Texture2D" uid="uid://bxvtjq5tcml4s" path="res://assets/units/dragon_idle.png" id="13_8uv43"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pstep"]
-atlas = ExtResource("12_abbge")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4klq8"]
-atlas = ExtResource("13_8uv43")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cydvt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pstep")
-}],
-"loop": true,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4klq8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://cb5li6pwgwmt0" path="res://assets/dragon.tres" id="12_kuip4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrkra"]
 bg_color = Color(0, 0, 0, 0.894118)
@@ -115,7 +87,7 @@ script = ExtResource("9_fc4tp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
 position = Vector2(0, -14)
 scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_cydvt")
+sprite_frames = ExtResource("12_kuip4")
 autoplay = "default"
 
 [node name="AttackTimer" type="Timer" parent="Enemy"]

@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cb5li6pwgwmt0"]
+
+[ext_resource type="Texture2D" uid="uid://2dquxwns5xox" path="res://assets/units/dragon_attack.png" id="1_axlok"]
+[ext_resource type="Texture2D" uid="uid://bxvtjq5tcml4s" path="res://assets/units/dragon_idle.png" id="2_c8qqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pstep"]
+atlas = ExtResource("1_axlok")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4klq8"]
+atlas = ExtResource("2_c8qqu")
+region = Rect2(0, 0, 200, 200)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pstep")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4klq8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
