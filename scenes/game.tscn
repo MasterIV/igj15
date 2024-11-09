@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=16 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
@@ -10,6 +10,7 @@
 [ext_resource type="JSON" path="res://data/wizard.json" id="7_mn1pt"]
 [ext_resource type="JSON" path="res://data/bard.json" id="7_nlrmn"]
 [ext_resource type="Script" path="res://scripts/bard.gd" id="9_5egey"]
+[ext_resource type="SpriteFrames" uid="uid://c3h4ug80aqnxq" path="res://assets/wizard.tres" id="9_bpfvk"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="9_fc4tp"]
 [ext_resource type="SpriteFrames" uid="uid://j1b1dp86ql7c" path="res://assets/hero.tres" id="10_04tct"]
 
@@ -85,6 +86,11 @@ file = ExtResource("7_mn1pt")
 
 [node name="RichTextLabel" parent="Units/Wizard" index="0"]
 text = "wizard"
+
+[node name="AnimatedSprite2D" parent="Units/Wizard" index="1"]
+sprite_frames = ExtResource("9_bpfvk")
+animation = &"attack"
+frame_progress = 0.889313
 
 [node name="Bard" parent="Units" instance=ExtResource("4_a7tnu")]
 position = Vector2(54, 94)
