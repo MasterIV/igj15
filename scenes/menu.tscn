@@ -15,9 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://c6lbicukm5c83" path="res://assets/vfx/musicparticle.png" id="13_0m6wr"]
 [ext_resource type="Texture2D" uid="uid://br1v8i2dywxa5" path="res://assets/units/wizard_shrug.png" id="13_s4b5d"]
 [ext_resource type="Texture2D" uid="uid://buaxl4uyu52ds" path="res://assets/units/barbarian_menu_idle.png" id="15_3sh77"]
-[ext_resource type="Texture2D" uid="uid://buddgs1jdho4t" path="res://assets/units/archer_shrug.png" id="15_6546a"]
 [ext_resource type="Texture2D" uid="uid://dakrgyrs7mx8y" path="res://assets/vfx/fireparticle.png" id="16_0pm5o"]
+[ext_resource type="Texture2D" uid="uid://b22wjho2kg34s" path="res://assets/units/archer_menu_idle.png" id="16_u01x7"]
 [ext_resource type="Texture2D" uid="uid://b35xjjqrrsnpf" path="res://assets/vfx/torchflame_sprite.png" id="17_ywxok"]
+[ext_resource type="AudioStream" uid="uid://0nss6rfbc15x" path="res://assets/snd/menu_music.mp3" id="19_rfk48"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8gac"]
 atlas = ExtResource("12_issx2")
@@ -131,12 +132,12 @@ curve = SubResource("Curve_lq2uh")
 particle_flag_disable_z = true
 emission_shape_offset = Vector3(15, -5, 0)
 emission_shape_scale = Vector3(0.6, 0.6, 0.6)
-angle_min = -720.0
-angle_max = 720.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
 velocity_pivot = Vector3(50, 0, 0)
 initial_velocity_min = 11.36
 initial_velocity_max = 85.23
-angular_velocity_min = -450.0
+angular_velocity_min = -1.60933e-05
 angular_velocity_max = -1.60933e-05
 orbit_velocity_min = 9.49949e-08
 orbit_velocity_max = 9.49949e-08
@@ -227,36 +228,29 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7id45"]
-atlas = ExtResource("15_6546a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx8xe"]
+atlas = ExtResource("16_u01x7")
 region = Rect2(0, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7onx7"]
-atlas = ExtResource("15_6546a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqjuc"]
+atlas = ExtResource("16_u01x7")
 region = Rect2(100, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxmry"]
-atlas = ExtResource("15_6546a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hkt8"]
+atlas = ExtResource("16_u01x7")
 region = Rect2(200, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4k561"]
-atlas = ExtResource("15_6546a")
-region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ckfbw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7id45")
+"texture": SubResource("AtlasTexture_vx8xe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7onx7")
+"texture": SubResource("AtlasTexture_lqjuc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nxmry")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4k561")
+"texture": SubResource("AtlasTexture_4hkt8")
 }],
 "loop": true,
 "name": &"default",
@@ -560,7 +554,7 @@ position = Vector2(184, 486)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_yaemf")
 autoplay = "default"
-frame_progress = 0.49935
+frame_progress = 0.893942
 
 [node name="MUSIC" type="GPUParticles2D" parent="Bonfire/Bard"]
 amount = 1
@@ -570,7 +564,7 @@ texture = ExtResource("13_0m6wr")
 [node name="Wizard" type="AnimatedSprite2D" parent="Bonfire"]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(553, 599)
+position = Vector2(435, 733)
 scale = Vector2(-4, 4)
 sprite_frames = SubResource("SpriteFrames_5vc0o")
 autoplay = "default"
@@ -579,20 +573,20 @@ frame_progress = 0.796217
 [node name="Warrior" type="AnimatedSprite2D" parent="Bonfire"]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(682, 666)
-scale = Vector2(4, 4)
+position = Vector2(517, 506)
+scale = Vector2(-4, 4)
 sprite_frames = SubResource("SpriteFrames_gktyy")
 autoplay = "default"
-frame_progress = 0.714982
+frame_progress = 0.741304
 
 [node name="Elf" type="AnimatedSprite2D" parent="Bonfire"]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(426, 725)
-scale = Vector2(-4, 4)
+position = Vector2(718, 666)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ckfbw")
 autoplay = "default"
-frame_progress = 0.82949
+frame_progress = 0.0437181
 
 [node name="SMOKE" type="GPUParticles2D" parent="Bonfire"]
 position = Vector2(339, 563)
@@ -620,6 +614,10 @@ scale = Vector2(6, 4)
 sprite_frames = SubResource("SpriteFrames_4lr26")
 autoplay = "default"
 frame_progress = 0.502963
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_rfk48")
+autoplay = true
 
 [connection signal="pressed" from="MainMenu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/CreditsButton" to="." method="_on_credits_button_pressed"]
