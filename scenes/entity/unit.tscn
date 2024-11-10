@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://d37ukx6ghaeok"]
+[gd_scene load_steps=12 format=3 uid="uid://d37ukx6ghaeok"]
 
 [ext_resource type="Script" path="res://scripts/unit.gd" id="1_gxtnv"]
+[ext_resource type="Texture2D" uid="uid://b1vhop7e4ctg" path="res://assets/units/hero_shadow.png" id="2_anhy4"]
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="2_cpwka"]
 [ext_resource type="SpriteFrames" uid="uid://m1enwt62qcnh" path="res://assets/vfx/dragonattack.tres" id="2_jekmd"]
 [ext_resource type="SpriteFrames" uid="uid://citbrtor45p6w" path="res://assets/archer.tres" id="3_dgpmj"]
@@ -53,6 +54,10 @@ _data = {
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_gxtnv")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(4, 40)
+texture = ExtResource("2_anhy4")
 
 [node name="Harm" type="AnimatedSprite2D" parent="."]
 z_index = 1

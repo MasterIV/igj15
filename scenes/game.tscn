@@ -91,10 +91,10 @@ z_index = 10
 position = Vector2(55, -4)
 file = ExtResource("5_s6y72")
 
-[node name="Harm" parent="Units/Archer" index="0"]
+[node name="Harm" parent="Units/Archer" index="1"]
 z_index = 15
 
-[node name="Attack" parent="Units/Archer" index="1"]
+[node name="Attack" parent="Units/Archer" index="2"]
 z_index = 11
 position = Vector2(-6, 8)
 scale = Vector2(-1, -1)
@@ -102,17 +102,16 @@ sprite_frames = ExtResource("5_nof7u")
 frame = 12
 frame_progress = 1.0
 
-[node name="AnimatedSprite2D" parent="Units/Archer" index="2"]
+[node name="AnimatedSprite2D" parent="Units/Archer" index="3"]
 z_index = 13
 material = SubResource("ShaderMaterial_57bai")
-animation = &"attack"
 frame_progress = 0.0
 
-[node name="RichTextLabel" parent="Units/Archer" index="3"]
+[node name="RichTextLabel" parent="Units/Archer" index="4"]
 z_index = 50
 text = "archer"
 
-[node name="AttackSound" parent="Units/Archer" index="5"]
+[node name="AttackSound" parent="Units/Archer" index="6"]
 stream = ExtResource("7_vciw6")
 
 [node name="Warrior" parent="Units" instance=ExtResource("4_a7tnu")]
@@ -120,10 +119,10 @@ z_index = 20
 position = Vector2(34, 35)
 file = ExtResource("6_ca1rp")
 
-[node name="Harm" parent="Units/Warrior" index="0"]
+[node name="Harm" parent="Units/Warrior" index="1"]
 z_index = 25
 
-[node name="Attack" parent="Units/Warrior" index="1"]
+[node name="Attack" parent="Units/Warrior" index="2"]
 z_index = 21
 position = Vector2(-27, 2)
 scale = Vector2(-1, 1)
@@ -131,17 +130,17 @@ sprite_frames = ExtResource("11_wvp0r")
 frame = 21
 frame_progress = 1.0
 
-[node name="AnimatedSprite2D" parent="Units/Warrior" index="2"]
+[node name="AnimatedSprite2D" parent="Units/Warrior" index="3"]
 z_index = 23
 material = SubResource("ShaderMaterial_hpgb3")
 sprite_frames = ExtResource("6_i1h1i")
-frame_progress = 0.183591
+frame_progress = 0.0
 
-[node name="RichTextLabel" parent="Units/Warrior" index="3"]
+[node name="RichTextLabel" parent="Units/Warrior" index="4"]
 z_index = 50
 text = "warrior"
 
-[node name="AttackSound" parent="Units/Warrior" index="5"]
+[node name="AttackSound" parent="Units/Warrior" index="6"]
 stream = ExtResource("11_cyp66")
 
 [node name="Wizard" parent="Units" instance=ExtResource("4_a7tnu")]
@@ -149,28 +148,27 @@ z_index = 30
 position = Vector2(61, 69)
 file = ExtResource("7_mn1pt")
 
-[node name="Harm" parent="Units/Wizard" index="0"]
+[node name="Harm" parent="Units/Wizard" index="1"]
 z_index = 35
 
-[node name="Attack" parent="Units/Wizard" index="1"]
+[node name="Attack" parent="Units/Wizard" index="2"]
 z_index = 34
 position = Vector2(-63, -33)
 scale = Vector2(-1, 1)
 sprite_frames = ExtResource("10_lpdoi")
 frame_progress = 0.766918
 
-[node name="AnimatedSprite2D" parent="Units/Wizard" index="2"]
+[node name="AnimatedSprite2D" parent="Units/Wizard" index="3"]
 z_index = 33
 material = SubResource("ShaderMaterial_kkgdq")
 sprite_frames = ExtResource("9_bpfvk")
-animation = &"attack"
-frame_progress = 0.719973
+frame_progress = 0.0
 
-[node name="RichTextLabel" parent="Units/Wizard" index="3"]
+[node name="RichTextLabel" parent="Units/Wizard" index="4"]
 z_index = 50
 text = "wizard"
 
-[node name="AttackSound" parent="Units/Wizard" index="5"]
+[node name="AttackSound" parent="Units/Wizard" index="6"]
 stream = ExtResource("15_yq47f")
 
 [node name="Bard" parent="Units" instance=ExtResource("4_a7tnu")]
@@ -179,26 +177,26 @@ position = Vector2(30, 93)
 script = ExtResource("9_5egey")
 file = ExtResource("7_nlrmn")
 
-[node name="Harm" parent="Units/Bard" index="0"]
+[node name="Harm" parent="Units/Bard" index="1"]
 z_index = 45
 
-[node name="Attack" parent="Units/Bard" index="1"]
+[node name="Attack" parent="Units/Bard" index="2"]
 z_index = 44
 sprite_frames = ExtResource("20_hks6t")
 frame = 34
 frame_progress = 1.0
 
-[node name="AnimatedSprite2D" parent="Units/Bard" index="2"]
+[node name="AnimatedSprite2D" parent="Units/Bard" index="3"]
 z_index = 41
 material = SubResource("ShaderMaterial_p33wb")
 sprite_frames = ExtResource("14_01dul")
-frame_progress = 0.00297784
+frame_progress = 0.0
 
-[node name="RichTextLabel" parent="Units/Bard" index="3"]
+[node name="RichTextLabel" parent="Units/Bard" index="4"]
 z_index = 50
 text = "bard"
 
-[node name="AttackSound" parent="Units/Bard" index="5"]
+[node name="AttackSound" parent="Units/Bard" index="6"]
 stream = ExtResource("19_2hxwk")
 
 [node name="Enemy" parent="." instance=ExtResource("21_m3wjm")]

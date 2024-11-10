@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var harmanimation: AnimatedSprite2D = $HarmAnimation
+@onready var breathanimation: AnimatedSprite2D = $BreathAnimation
 @onready var attacksounds: Dictionary = {
 	"bite": $BiteSound,
 	"scratch": $ScratchSound
@@ -52,7 +53,8 @@ func _process(delta: float) -> void:
 			units[u].icon.value = max(0, 100 * (units[u].active / UNIT_ACTIVE_TIME))
 
 func breath():
-	pass
+	sprite.animation = "breath"
+	breathanimation.play()
 
 func get_health():
 	return health
@@ -71,7 +73,7 @@ func harm(type: String) -> bool:
 
 	sprite.animation = "harm"
 	harmanimation.play(type)
-	health -= 10		
+	health -= 10
 	return true
 
 func attack(type: String):
