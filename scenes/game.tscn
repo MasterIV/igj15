@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=34 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
 [ext_resource type="SpriteFrames" uid="uid://48g7cwc5wv8p" path="res://assets/vfx/torch.tres" id="3_5fcrt"]
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="3_jvgll"]
 [ext_resource type="Texture2D" uid="uid://nrop4pfy2sb7" path="res://assets/background/default.png" id="3_ujyjc"]
+[ext_resource type="Texture2D" uid="uid://cxju75pdom0gs" path="res://assets/ui/input_bar.png" id="4_5gvqa"]
 [ext_resource type="PackedScene" uid="uid://d37ukx6ghaeok" path="res://scenes/entity/unit.tscn" id="4_a7tnu"]
 [ext_resource type="SpriteFrames" uid="uid://csm7bevjlx7si" path="res://assets/vfx/archer_attack.tres" id="5_nof7u"]
 [ext_resource type="JSON" path="res://data/archer.json" id="5_s6y72"]
@@ -73,6 +74,10 @@ position = Vector2(-57, -67)
 sprite_frames = ExtResource("3_5fcrt")
 autoplay = "default"
 frame_progress = 0.464752
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(0, -84)
+texture = ExtResource("4_5gvqa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
@@ -215,6 +220,7 @@ selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+caret_blink = true
 language = "en"
 script = ExtResource("1_xq41r")
 
