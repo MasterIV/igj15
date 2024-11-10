@@ -4,6 +4,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$MainMenu/StartButton.grab_focus()
+	if OS.has_feature("web"):
+		$MainMenu/ExitButton.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,8 +34,13 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
+	$Logo.visible = false
+	$InfoText.visible = true
 	$ButtonClicked.play()
-	$InfoText.newText("Credits:
+	$InfoText.newText("Welcome Dungeon Dwellers!
+Will you slay the horrific Bottleneck Dragon? Or will the Dragon feed on your corpses? Who knows!
+
+Credits:
 created @IGJam15, 2024
 
 Judith Gastell (Head of 2D)

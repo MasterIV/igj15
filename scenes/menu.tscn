@@ -1,58 +1,38 @@
-[gd_scene load_steps=7 format=3 uid="uid://dei732lbu1s7t"]
+[gd_scene load_steps=12 format=3 uid="uid://dei732lbu1s7t"]
 
 [ext_resource type="Script" path="res://scripts/menu/menu.gd" id="1_2l6ls"]
 [ext_resource type="Theme" uid="uid://dpull7brvgmlv" path="res://themes/menu_text.tres" id="1_ij171"]
 [ext_resource type="Texture2D" uid="uid://dcoxc3qx1psck" path="res://assets/background/menu_background.jpg" id="1_noxxp"]
 [ext_resource type="Script" path="res://scripts/menu/info_text.gd" id="4_ntoya"]
+[ext_resource type="Texture2D" uid="uid://ba3qy7odq5vgd" path="res://assets/ui/start_btn_normal.png" id="4_sxp1g"]
 [ext_resource type="AudioStream" uid="uid://c0p7axtiox1sq" path="res://assets/snd/button_click.mp3" id="5_bfb8w"]
 [ext_resource type="Script" path="res://scripts/menu/textnumber.gd" id="5_ehp5p"]
+[ext_resource type="Texture2D" uid="uid://cy70slixdutod" path="res://assets/ui/start_btn_selected.png" id="5_x13ua"]
+[ext_resource type="Texture2D" uid="uid://606cqmj13ojh" path="res://assets/ui/game_logo.png" id="9_3opdd"]
+[ext_resource type="Texture2D" uid="uid://b0bob2ltrew8c" path="res://assets/ui/credits_btn_normal.png" id="9_k2eyv"]
+[ext_resource type="Texture2D" uid="uid://fiebxm7vw7ty" path="res://assets/ui/credits_btn_selected.png" id="10_3jh31"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_2l6ls")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(695.5, 554.5)
-scale = Vector2(1.35059, 1.13574)
+position = Vector2(688, 448)
 texture = ExtResource("1_noxxp")
 
-[node name="MainMenu" type="VBoxContainer" parent="."]
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 250.0
-offset_bottom = 292.0
-theme = ExtResource("1_ij171")
-theme_override_constants/separation = 25
-
-[node name="StartButton" type="Button" parent="MainMenu"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../ExitButton")
-theme = ExtResource("1_ij171")
-text = "Start"
-
-[node name="CreditsButton" type="Button" parent="MainMenu"]
-layout_mode = 2
-theme = ExtResource("1_ij171")
-text = "Credits"
-
-[node name="ExitButton" type="Button" parent="MainMenu"]
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../StartButton")
-theme = ExtResource("1_ij171")
-text = "Exit"
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(464, 237)
+texture = ExtResource("9_3opdd")
 
 [node name="InfoText" type="RichTextLabel" parent="."]
-offset_left = 350.0
-offset_top = 50.0
-offset_right = 1342.0
-offset_bottom = 1058.0
+visible = false
+offset_left = 30.0
+offset_top = 37.0
+offset_right = 854.0
+offset_bottom = 860.0
 theme = ExtResource("1_ij171")
+theme_override_colors/default_color = Color(0.717647, 0.729412, 0.152941, 1)
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "Welcome Dungeon Dwellers!
-
-Will you slay the horrific Bottleneck Dragon? Or will the Dragon feed on your corpses?
-
-Who knows!"
 script = ExtResource("4_ntoya")
 
 [node name="StartGameText" type="RichTextLabel" parent="."]
@@ -91,6 +71,29 @@ shortcut_keys_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 script = ExtResource("5_ehp5p")
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+offset_left = 870.0
+offset_top = 445.0
+offset_right = 1214.0
+offset_bottom = 729.0
+theme = ExtResource("1_ij171")
+theme_override_constants/separation = 25
+
+[node name="StartButton" type="TextureButton" parent="MainMenu"]
+layout_mode = 2
+texture_normal = ExtResource("4_sxp1g")
+texture_hover = ExtResource("5_x13ua")
+
+[node name="CreditsButton" type="TextureButton" parent="MainMenu"]
+layout_mode = 2
+texture_normal = ExtResource("9_k2eyv")
+texture_hover = ExtResource("10_3jh31")
+
+[node name="ExitButton" type="Button" parent="MainMenu"]
+layout_mode = 2
+theme = ExtResource("1_ij171")
+text = "Exit"
 
 [node name="ButtonClicked" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_bfb8w")

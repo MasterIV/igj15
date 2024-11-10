@@ -1,19 +1,23 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://dpull7brvgmlv"]
 
 [ext_resource type="StyleBox" uid="uid://hfxkicdpdkid" path="res://themes/bordered_button_h.tres" id="1_1025r"]
-[ext_resource type="FontFile" uid="uid://blspxj6fgoc37" path="res://themes/LiberationSans-Regular.ttf" id="1_hlivc"]
 [ext_resource type="StyleBox" uid="uid://xv45jtptn7eu" path="res://themes/bordered_button.tres" id="2_401in"]
 [ext_resource type="StyleBox" uid="uid://b282ohk510lwi" path="res://themes/bordered_button_p.tres" id="3_jyhjo"]
+[ext_resource type="FontFile" uid="uid://biiy4r274ad7" path="res://themes/m5x7.ttf" id="4_oyalm"]
 
 [resource]
-default_font = ExtResource("1_hlivc")
-default_font_size = 60
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
+default_font = ExtResource("4_oyalm")
+default_font_size = 70
+Button/colors/font_color = Color(0.717647, 0.729412, 0.152941, 1)
+Button/colors/font_focus_color = Color(0.756863, 0.380392, 0.65098, 1)
+Button/colors/font_hover_color = Color(0.756258, 0.378571, 0.649791, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/styles/focus = ExtResource("1_1025r")
 Button/styles/hover = ExtResource("1_1025r")
 Button/styles/normal = ExtResource("2_401in")
 Button/styles/pressed = ExtResource("3_jyhjo")
+Label/colors/font_color = Color(0.717647, 0.729412, 0.152941, 1)
 Label/constants/line_spacing = 3
 Label/constants/outline_size = 10
 RichTextLabel/constants/outline_size = 10
