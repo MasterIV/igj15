@@ -224,7 +224,7 @@ animations = [{
 "speed": 0.0
 }, {
 "frames": [{
-"duration": 50.0,
+"duration": 20.0,
 "texture": null
 }, {
 "duration": 1.0,

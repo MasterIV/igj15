@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=79 format=3 uid="uid://dwdxtwfs58u73"]
+[gd_resource type="SpriteFrames" load_steps=79 format=3 uid="uid://w5t3iwuqbrhp"]
 
 [ext_resource type="Texture2D" uid="uid://dm7myj3ji6fy6" path="res://assets/vfx/archer_hit_effect.png" id="1_gp0k0"]
 [ext_resource type="Texture2D" uid="uid://pnarw51kvqcj" path="res://assets/vfx/warrior_hit_effect.png" id="2_nuh5n"]
