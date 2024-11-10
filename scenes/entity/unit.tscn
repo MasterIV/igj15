@@ -87,4 +87,6 @@ libraries = {
 "": SubResource("AnimationLibrary_6nnki")
 }
 
+[node name="AttackSound" type="AudioStreamPlayer" parent="."]
+
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]

@@ -6,6 +6,7 @@ extends Node2D
 @onready var harmanimation: AnimatedSprite2D = $Harm
 @onready var attackanimation: AnimatedSprite2D = $Attack
 @onready var hit_flash: AnimationPlayer = $HitFlash
+@onready var sound: AudioStreamPlayer = $AttackSound
 
 var data: Array = []
 var word: String
@@ -15,6 +16,7 @@ func trigger(success: bool):
 	if success:
 		sprite.animation = "attack"
 		attackanimation.play()
+		sound.play()
 	else:
 		sprite.animation = "shrug"
 	label.text = ""
