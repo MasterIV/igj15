@@ -529,12 +529,12 @@ texture = ExtResource("9_3opdd")
 
 [node name="InfoText" type="RichTextLabel" parent="."]
 offset_left = 24.0
-offset_top = 17.0
+offset_top = 12.0
 offset_right = 1094.0
-offset_bottom = 404.0
+offset_bottom = 399.0
 theme = ExtResource("1_ij171")
 theme_override_colors/default_color = Color(0.717647, 0.729412, 0.152941, 1)
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 script = ExtResource("4_ntoya")
 
