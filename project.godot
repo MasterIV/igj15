@@ -13,6 +13,7 @@ config_version=5
 config/name="InnoJam 15"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://assets/konservenfabrik_splash.jpg"
 config/icon="res://icon.svg"
 
 [autoload]

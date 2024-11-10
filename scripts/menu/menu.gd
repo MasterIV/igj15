@@ -35,6 +35,7 @@ func _on_exit_button_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	$Logo.visible = false
+	$Fabrik.visible = true
 	$InfoText.visible = true
 	$ButtonClicked.play()
 	$InfoText.newText("Welcome Dungeon Dwellers!
