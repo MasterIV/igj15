@@ -1,8 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=36 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
-[ext_resource type="SpriteFrames" uid="uid://48g7cwc5wv8p" path="res://assets/vfx/torch.tres" id="3_5fcrt"]
+[ext_resource type="SpriteFrames" uid="uid://cqfqls8u6rxl" path="res://assets/vfx/torch.tres" id="3_5fcrt"]
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="3_jvgll"]
 [ext_resource type="Texture2D" uid="uid://nrop4pfy2sb7" path="res://assets/background/default.png" id="3_ujyjc"]
 [ext_resource type="Texture2D" uid="uid://cxju75pdom0gs" path="res://assets/ui/input_bar.png" id="4_5gvqa"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cu46or1lod06o" path="res://scenes/entity/enemy.tscn" id="21_m3wjm"]
 [ext_resource type="Texture2D" uid="uid://dydqyydamep8w" path="res://assets/ui/health_empty_dragon.png" id="26_o0fim"]
 [ext_resource type="Texture2D" uid="uid://cb25ffxi2vs8d" path="res://assets/ui/health_full_dragon.png" id="27_wy57o"]
+[ext_resource type="AudioStream" uid="uid://b7v58tlltkucj" path="res://assets/snd/game_music.mp3" id="30_6742y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_57bai"]
 resource_local_to_scene = true
@@ -276,6 +277,10 @@ one_shot = true
 [node name="Victory" type="Timer" parent="Timers"]
 wait_time = 5.0
 one_shot = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_6742y")
+autoplay = true
 
 [connection signal="focus_exited" from="LineEdit" to="LineEdit" method="_on_focus_exited"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
