@@ -65,7 +65,8 @@ func harm(type: String) -> bool:
 	for u in units.keys():
 		if units[u].active > 0: active_heros += 1
 	if active_heros < 1: activate_hero()
-	
+
+	sprite.animation = "harm"
 	harmanimation.play(type)
 	health -= 10		
 	return true
@@ -75,5 +76,5 @@ func attack(type: String):
 	attacksounds[type].play()
 
 func _on_animation_looped() -> void:
-	if sprite.animation == "attack":
+	if sprite.animation == "attack" or sprite.animation == "harm":
 		sprite.animation = "default"

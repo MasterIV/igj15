@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs3v3hfxkssv3"]
+
+[ext_resource type="Texture2D" uid="uid://cm1q1jhfqduuh" path="res://assets/icons/archer.png" id="1_e1da7"]
+[ext_resource type="Script" path="res://scenes/entity/icon.gd" id="2_lykqx"]
+[ext_resource type="Texture2D" uid="uid://d4nolhhr40jly" path="res://assets/icons/selected_arrow.png" id="2_rwjk5"]
+
+[sub_resource type="Animation" id="Animation_mmfl2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wf0rt"]
+resource_name = "bounce"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(13, 0), Vector2(13, -4), Vector2(13, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qn52g"]
+_data = {
+"RESET": SubResource("Animation_mmfl2"),
+"bounce": SubResource("Animation_wf0rt")
+}
+
+[node name="Icon" type="TextureProgressBar"]
+texture_under = ExtResource("1_e1da7")
+texture_progress = ExtResource("1_e1da7")
+tint_under = Color(0.4, 0.4, 0.4, 1)
+script = ExtResource("2_lykqx")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(13, 0)
+texture = ExtResource("2_rwjk5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qn52g")
+}
+autoplay = "bounce"
+speed_scale = 2.0

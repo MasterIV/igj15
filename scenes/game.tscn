@@ -135,7 +135,7 @@ frame_progress = 1.0
 z_index = 23
 material = SubResource("ShaderMaterial_hpgb3")
 sprite_frames = ExtResource("6_i1h1i")
-frame_progress = 0.479839
+frame_progress = 0.183591
 
 [node name="RichTextLabel" parent="Units/Warrior" index="3"]
 z_index = 50

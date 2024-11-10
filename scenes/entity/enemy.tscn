@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_uv08h"]
 [ext_resource type="SpriteFrames" uid="uid://cb5li6pwgwmt0" path="res://assets/dragon.tres" id="2_ah4th"]
-[ext_resource type="Texture2D" uid="uid://cm1q1jhfqduuh" path="res://assets/icons/archer.png" id="3_2mwnp"]
 [ext_resource type="SpriteFrames" uid="uid://w5t3iwuqbrhp" path="res://assets/vfx/dragonharm.tres" id="3_8jho4"]
+[ext_resource type="PackedScene" uid="uid://cs3v3hfxkssv3" path="res://scenes/entity/icon.tscn" id="3_i0npb"]
 [ext_resource type="Texture2D" uid="uid://c6m7xnwx5wfp5" path="res://assets/icons/warrior.png" id="4_mvuij"]
 [ext_resource type="AudioStream" uid="uid://c7ti4x5h4o00r" path="res://assets/snd/dragon_bite.mp3" id="4_omibv"]
 [ext_resource type="Texture2D" uid="uid://7fry0375hp8b" path="res://assets/icons/wizard.png" id="5_ewnv4"]
@@ -35,29 +35,23 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 5
 
-[node name="Archer" type="TextureProgressBar" parent="Icons"]
+[node name="Archer" parent="Icons" instance=ExtResource("3_i0npb")]
 layout_mode = 2
-texture_under = ExtResource("3_2mwnp")
-texture_progress = ExtResource("3_2mwnp")
-tint_under = Color(0.4, 0.4, 0.4, 1)
 
-[node name="Warrior" type="TextureProgressBar" parent="Icons"]
+[node name="Warrior" parent="Icons" instance=ExtResource("3_i0npb")]
 layout_mode = 2
 texture_under = ExtResource("4_mvuij")
 texture_progress = ExtResource("4_mvuij")
-tint_under = Color(0.4, 0.4, 0.4, 1)
 
-[node name="Wizard" type="TextureProgressBar" parent="Icons"]
+[node name="Wizard" parent="Icons" instance=ExtResource("3_i0npb")]
 layout_mode = 2
 texture_under = ExtResource("5_ewnv4")
 texture_progress = ExtResource("5_ewnv4")
-tint_under = Color(0.4, 0.4, 0.4, 1)
 
-[node name="Bard" type="TextureProgressBar" parent="Icons"]
+[node name="Bard" parent="Icons" instance=ExtResource("3_i0npb")]
 layout_mode = 2
 texture_under = ExtResource("6_eqb2p")
 texture_progress = ExtResource("6_eqb2p")
-tint_under = Color(0.4, 0.4, 0.4, 1)
 
 [node name="HarmAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_8jho4")
