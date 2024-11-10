@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=37 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
+[ext_resource type="SpriteFrames" uid="uid://48g7cwc5wv8p" path="res://assets/vfx/torch.tres" id="3_5fcrt"]
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="3_jvgll"]
 [ext_resource type="Texture2D" uid="uid://nrop4pfy2sb7" path="res://assets/background/default.png" id="3_ujyjc"]
 [ext_resource type="PackedScene" uid="uid://d37ukx6ghaeok" path="res://scenes/entity/unit.tscn" id="4_a7tnu"]
@@ -10,7 +11,7 @@
 [ext_resource type="Shader" uid="uid://nltinbl0i81g" path="res://scenes/entity/hit_flash.tres" id="6_51yh7"]
 [ext_resource type="JSON" path="res://data/warrior.json" id="6_ca1rp"]
 [ext_resource type="SpriteFrames" uid="uid://x0oba8hy47te" path="res://assets/warrior.tres" id="6_i1h1i"]
-[ext_resource type="SpriteFrames" uid="uid://b7mwwerqsjjvu" path="res://assets/units/empty_attack.tres" id="7_6i45f"]
+[ext_resource type="SpriteFrames" path="res://assets/units/empty_attack.tres" id="7_6i45f"]
 [ext_resource type="JSON" path="res://data/wizard.json" id="7_mn1pt"]
 [ext_resource type="JSON" path="res://data/bard.json" id="7_nlrmn"]
 [ext_resource type="AudioStream" uid="uid://bnuai16ona3bo" path="res://assets/snd/arrow_strike.mp3" id="7_vciw6"]
@@ -70,6 +71,18 @@ script = ExtResource("1_m2d46")
 
 [node name="BackgroundTexture" type="Sprite2D" parent="Background"]
 texture = ExtResource("3_ujyjc")
+
+[node name="TorchRight" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(54, -67)
+sprite_frames = ExtResource("3_5fcrt")
+autoplay = "default"
+frame_progress = 0.475577
+
+[node name="TorchLeft" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(-57, -67)
+sprite_frames = ExtResource("3_5fcrt")
+autoplay = "default"
+frame_progress = 0.464752
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
