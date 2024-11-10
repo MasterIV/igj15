@@ -76,9 +76,11 @@ func harm(type: String) -> bool:
 		if units[u].active > 0: active_heros += 1
 	if active_heros < 1: activate_hero()
 
-	sprite.animation = "harm"
+	
 	harmanimation.play(type)
-	health -= 10
+	if type != "Bard":
+		sprite.animation = "harm"
+		health -= 10
 	return true
 
 func attack(type: String):

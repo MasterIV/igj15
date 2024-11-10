@@ -412,7 +412,9 @@ texture_progress = ExtResource("6_eqb2p")
 
 [node name="HarmAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_8jho4")
-animation = &"Wizard"
+animation = &"Bard"
+frame = 13
+frame_progress = 1.0
 
 [node name="BreathAnimation" type="AnimatedSprite2D" parent="."]
 position = Vector2(41, -39)
@@ -429,5 +431,7 @@ stream = ExtResource("5_o3nim")
 [node name="BreathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_rhcmy")
 volume_db = 1.072
+
+[node name="MISS" type="AnimatedSprite2D" parent="."]
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]
