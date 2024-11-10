@@ -1,52 +1,56 @@
 extends Node2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var icons: GridContainer = $Icons
 @onready var harmanimation: AnimatedSprite2D = $HarmAnimation
 @onready var attacksounds: Dictionary = {
 	"bite": $BiteSound,
 	"scratch": $ScratchSound
 }
 
-var difficulty: int   = 8
-var units: Dictionary = {
-	"Archer": [load("res://assets/icons/archer.png"),load("res://assets/icons/archer_active.png")], 
-	"Warrior": [load("res://assets/icons/warrior.png"),load("res://assets/icons/warrior_active.png")], 
-	"Wizard": [load("res://assets/icons/wizard.png"), load("res://assets/icons/wizard_active.png")], 
-	"Bard": [load("res://assets/icons/bard.png"), load("res://assets/icons/bard_active.png")]
+@onready var units: Dictionary = {
+	"Archer": {"active": 0, "icon": $Icons/Archer}, 
+	"Warrior": {"active": 0, "icon": $Icons/Warrior}, 
+	"Wizard": {"active": 0, "icon": $Icons/Wizard}, 
+	"Bard": {"active": 0, "icon": $Icons/Bard}
 }
 
-var weaknesses: Array[Dictionary] = []
+var difficulty: int = 8
+var cooldown: int = 0
+var health = 100
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	for i in range(0, difficulty):
-		var unit = units.keys().pick_random()
-		var icon = load("res://scenes/entity/icon.tscn").instantiate()
-		
-		weaknesses.append({"unit": unit, "icon": icon })
-		icon.texture = units[unit][0]
-		icons.add_child(icon)
-		
-	weaknesses[0]["icon"].texture = units[weaknesses[0]["unit"]][1]
+const UNIT_ACTIVE_TIME = 10000
+const MIN_ACTIVATION = 4000
+const MAX_ACTIVATION = 6000
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+var rng = RandomNumberGenerator.new()
+	
 func _process(delta: float) -> void:
-	pass
+	cooldown -= delta * 1000
+	
+	# Dont activate a new character while the bard is still active
+	if cooldown < 1 and units["Bard"].active < 1:
+		var unit = units.keys().pick_random()
+		if units[unit].active < 1:
+			cooldown = rng.randi_range(MIN_ACTIVATION, MAX_ACTIVATION)
+			units[unit].active = UNIT_ACTIVE_TIME
+		
+	for u in units.keys():
+		if units[u].active > 0:
+			if u != "Bard": units[u].active -= delta * 1000
+			units[u].icon.value = max(0, 100 * (units[u].active / UNIT_ACTIVE_TIME))
+
+func get_health():
+	return health
 	
 func harm(type: String) -> bool:
-	if len(weaknesses) < 1 or type != weaknesses[0]["unit"]:
+	if units[type].active < 1:
 		return false
 		
-	var w = weaknesses.pop_front()
-	w["icon"].queue_free()
-	harmanimation.play(type)
+	units[type].active = 0
+	units[type].icon.value = 0
 	
-	if len(weaknesses) < 1:
-		pass #victory
-	else:
-		weaknesses[0]["icon"].texture = units[weaknesses[0]["unit"]][1]
-		
+	harmanimation.play(type)
+	health -= 5		
 	return true
 
 func attack(type: String):

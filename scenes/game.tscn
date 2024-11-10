@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=33 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
@@ -17,18 +17,16 @@
 [ext_resource type="AudioStream" uid="uid://bnuai16ona3bo" path="res://assets/snd/arrow_strike.mp3" id="7_vciw6"]
 [ext_resource type="Script" path="res://scripts/bard.gd" id="9_5egey"]
 [ext_resource type="SpriteFrames" uid="uid://c3h4ug80aqnxq" path="res://assets/wizard.tres" id="9_bpfvk"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="9_fc4tp"]
 [ext_resource type="SpriteFrames" uid="uid://bweds27nfr173" path="res://assets/vfx/wizard_attack.tres" id="10_lpdoi"]
 [ext_resource type="AudioStream" uid="uid://b4fmwhdsom8to" path="res://assets/snd/sword_attack.mp3" id="11_cyp66"]
-[ext_resource type="SpriteFrames" uid="uid://cb5li6pwgwmt0" path="res://assets/dragon.tres" id="12_kuip4"]
 [ext_resource type="SpriteFrames" uid="uid://undpvv5wocum" path="res://assets/bard.tres" id="14_01dul"]
 [ext_resource type="AudioStream" uid="uid://07p70v2cf5yl" path="res://assets/snd/lightning_strike_2.mp3" id="15_yq47f"]
-[ext_resource type="SpriteFrames" uid="uid://w5t3iwuqbrhp" path="res://assets/vfx/dragonharm.tres" id="17_1intl"]
 [ext_resource type="Texture2D" uid="uid://oxchegkh2snu" path="res://assets/ui/health_empty.png" id="18_n107t"]
 [ext_resource type="AudioStream" uid="uid://ckkhanxrmn8tk" path="res://assets/snd/lute.mp3" id="19_2hxwk"]
 [ext_resource type="Texture2D" uid="uid://rpd1beujgebe" path="res://assets/ui/health_full.png" id="19_3uunb"]
-[ext_resource type="AudioStream" uid="uid://c7ti4x5h4o00r" path="res://assets/snd/dragon_bite.mp3" id="23_jes65"]
-[ext_resource type="AudioStream" uid="uid://b5xascy6xcdpx" path="res://assets/snd/dragon_roar.mp3" id="24_kqj2s"]
+[ext_resource type="PackedScene" uid="uid://cu46or1lod06o" path="res://scenes/entity/enemy.tscn" id="21_m3wjm"]
+[ext_resource type="Texture2D" uid="uid://dydqyydamep8w" path="res://assets/ui/health_empty_dragon.png" id="26_o0fim"]
+[ext_resource type="Texture2D" uid="uid://cb25ffxi2vs8d" path="res://assets/ui/health_full_dragon.png" id="27_wy57o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_57bai"]
 resource_local_to_scene = true
@@ -56,14 +54,6 @@ shader_parameter/tint = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cvr4h"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_010dk"]
-texture = ExtResource("18_n107t")
-modulate_color = Color(0.254902, 0, 0.027451, 0.882353)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5mgs"]
-texture = ExtResource("19_3uunb")
-axis_stretch_horizontal = 1
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_m2d46")
 
@@ -76,7 +66,7 @@ texture = ExtResource("3_ujyjc")
 position = Vector2(54, -67)
 sprite_frames = ExtResource("3_5fcrt")
 autoplay = "default"
-frame_progress = 0.475577
+frame_progress = 0.342247
 
 [node name="TorchLeft" type="AnimatedSprite2D" parent="Background"]
 position = Vector2(-57, -67)
@@ -199,44 +189,7 @@ text = "bard"
 [node name="AttackSound" parent="Units/Bard" index="5"]
 stream = ExtResource("19_2hxwk")
 
-[node name="Enemy" type="Node2D" parent="."]
-position = Vector2(-85, 12)
-script = ExtResource("9_fc4tp")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
-position = Vector2(0, -14)
-scale = Vector2(-1, 1)
-sprite_frames = ExtResource("12_kuip4")
-autoplay = "default"
-frame_progress = 0.52694
-
-[node name="AttackTimer" type="Timer" parent="Enemy"]
-wait_time = 5.0
-autostart = true
-
-[node name="Icons" type="GridContainer" parent="Enemy"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = 36.0
-offset_right = 40.0
-offset_bottom = 76.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 5
-
-[node name="HarmAnimation" type="AnimatedSprite2D" parent="Enemy"]
-sprite_frames = ExtResource("17_1intl")
-animation = &"Wizard"
-
-[node name="BiteSound" type="AudioStreamPlayer2D" parent="Enemy"]
-stream = ExtResource("23_jes65")
-
-[node name="ScratchSound" type="AudioStreamPlayer2D" parent="Enemy"]
-stream = ExtResource("24_kqj2s")
+[node name="Enemy" parent="." instance=ExtResource("21_m3wjm")]
 
 [node name="LineEdit" type="LineEdit" parent="."]
 anchors_preset = 8
@@ -265,28 +218,48 @@ flat = true
 language = "en"
 script = ExtResource("1_xq41r")
 
-[node name="HealthBar" type="ProgressBar" parent="."]
+[node name="PartyHealth" type="TextureProgressBar" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
+offset_left = 20.0
 offset_top = -110.0
-offset_right = 69.0
+offset_right = 159.0
 offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxTexture_010dk")
-theme_override_styles/fill = SubResource("StyleBoxTexture_q5mgs")
 value = 100.0
-show_percentage = false
+texture_under = ExtResource("18_n107t")
+texture_progress = ExtResource("19_3uunb")
+tint_under = Color(0.4, 0.4, 0.4, 1)
 
-[connection signal="animation_looped" from="Enemy/AnimatedSprite2D" to="Enemy" method="_on_animation_looped"]
-[connection signal="timeout" from="Enemy/AttackTimer" to="." method="_on_attack_timer_timeout"]
+[node name="DragonHealth" type="TextureProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -110.0
+offset_right = -20.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+texture_under = ExtResource("26_o0fim")
+texture_progress = ExtResource("27_wy57o")
+tint_under = Color(0.4, 0.4, 0.4, 1)
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="focus_exited" from="LineEdit" to="LineEdit" method="_on_focus_exited"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 
 [editable path="Units/Archer"]
 [editable path="Units/Warrior"]
