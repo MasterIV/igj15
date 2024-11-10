@@ -275,7 +275,7 @@ wait_time = 8.0
 one_shot = true
 
 [node name="Victory" type="Timer" parent="Timers"]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
