@@ -51,6 +51,9 @@ func _process(delta: float) -> void:
 			if u != "Bard": units[u].active -= delta * 1000
 			units[u].icon.value = max(0, 100 * (units[u].active / UNIT_ACTIVE_TIME))
 
+func breath():
+	pass
+
 func get_health():
 	return health
 	

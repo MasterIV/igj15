@@ -3,12 +3,15 @@ extends Node2D
 @export var file: Resource
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var label: RichTextLabel = $RichTextLabel
+
 @onready var harmanimation: AnimatedSprite2D = $Harm
 @onready var attackanimation: AnimatedSprite2D = $Attack
+@onready var fireanimation: AnimatedSprite2D = $Fire
+
 @onready var hit_flash: AnimationPlayer = $HitFlash
 @onready var sound: AudioStreamPlayer = $AttackSound
 
-var data: Array = []
+var data
 var word: String
 var available: bool = true
 
@@ -28,6 +31,10 @@ func harm(type: String):
 
 func typing(text: String):
 	pass
+	
+func die():
+	sprite.animation = "die"
+	fireanimation.play()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,33 +1,7 @@
-extends Node2D
-
-@export var file: Resource
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var label: RichTextLabel = $RichTextLabel
-@onready var harmanimation: AnimatedSprite2D = $Harm
-@onready var attackanimation: AnimatedSprite2D = $Attack
-@onready var hit_flash: AnimationPlayer = $HitFlash
-@onready var sound: AudioStreamPlayer = $AttackSound
-
-var data: Dictionary
-var word: String
-var available: bool = true
+extends "res://scripts/unit.gd"
 
 var rng = RandomNumberGenerator.new()
 
-func trigger(success: bool):
-	if success:
-		sprite.animation = "attack"
-		attackanimation.play()
-		sound.play()
-	else:
-		sprite.animation = "shrug"
-	label.text = ""
-	available = false
-
-func harm(type: String):
-	harmanimation.play(type)
-	hit_flash.play("flash")
-	
 func typing(text: String):
 	if text == label.text and text != word:
 		label.text = word
@@ -36,10 +10,6 @@ func typing(text: String):
 func _ready() -> void:
 	data = Common.load_data(file)
 	select_word()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func create_typo(text: String) -> String:
 	var l: int = len(text)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d37ukx6ghaeok"]
+[gd_scene load_steps=11 format=3 uid="uid://d37ukx6ghaeok"]
 
 [ext_resource type="Script" path="res://scripts/unit.gd" id="1_gxtnv"]
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="2_cpwka"]
 [ext_resource type="SpriteFrames" uid="uid://m1enwt62qcnh" path="res://assets/vfx/dragonattack.tres" id="2_jekmd"]
 [ext_resource type="SpriteFrames" uid="uid://citbrtor45p6w" path="res://assets/archer.tres" id="3_dgpmj"]
 [ext_resource type="Shader" uid="uid://nltinbl0i81g" path="res://scenes/entity/hit_flash.tres" id="3_i568x"]
+[ext_resource type="SpriteFrames" uid="uid://ba0l0ldxjr6v2" path="res://assets/vfx/firepillar.tres" id="6_5xkyb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_anntj"]
 resource_local_to_scene = true
@@ -87,5 +88,11 @@ libraries = {
 }
 
 [node name="AttackSound" type="AudioStreamPlayer" parent="."]
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+z_index = 60
+sprite_frames = ExtResource("6_5xkyb")
+frame = 37
+frame_progress = 1.0
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]

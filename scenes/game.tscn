@@ -265,14 +265,26 @@ texture_under = ExtResource("26_o0fim")
 texture_progress = ExtResource("27_wy57o")
 tint_under = Color(0.4, 0.4, 0.4, 1)
 
-[node name="AttackTimer" type="Timer" parent="."]
+[node name="Timers" type="Node" parent="."]
+
+[node name="Attack" type="Timer" parent="Timers"]
 wait_time = 5.0
 autostart = true
+
+[node name="Defeat" type="Timer" parent="Timers"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Victory" type="Timer" parent="Timers"]
+wait_time = 5.0
+one_shot = true
 
 [connection signal="focus_exited" from="LineEdit" to="LineEdit" method="_on_focus_exited"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timers/Attack" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timers/Defeat" to="." method="_on_defeat_timeout"]
+[connection signal="timeout" from="Timers/Victory" to="." method="_on_victory_timeout"]
 
 [editable path="Units/Archer"]
 [editable path="Units/Warrior"]
