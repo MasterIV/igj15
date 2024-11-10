@@ -38,11 +38,10 @@ func _on_credits_button_pressed() -> void:
 	$InfoText.visible = true
 	$ButtonClicked.play()
 	$InfoText.newText("Welcome Dungeon Dwellers!
-Will you slay the horrific Bottleneck Dragon? Or will the Dragon feed on your corpses? Who knows!
+Will you slay the horrific Dragon? Or will the Dragon feed on your corpses? Who knows!
 
 Credits:
 created @IGJam15, 2024
-
 Judith Gastell (Head of 2D)
 Tamara Meyendriesch (Expert of 2D)
 Tobias Rojahn (Expert Senior Dev)
