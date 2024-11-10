@@ -27,7 +27,7 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 			input.text = ""
 
 func _on_attack_timer_timeout() -> void:
-	hp -= 50
+	hp -= 5
 	party_health.value = hp
 	
 	if hp <= 0:

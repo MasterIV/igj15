@@ -207,7 +207,7 @@ region = Rect2(3995, 0, 85, 85)
 [sub_resource type="SpriteFrames" id="SpriteFrames_ruocb"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 16.0,
 "texture": null
 }, {
 "duration": 1.0,
@@ -413,7 +413,7 @@ sprite_frames = ExtResource("3_8jho4")
 animation = &"Wizard"
 
 [node name="BreathAnimation" type="AnimatedSprite2D" parent="."]
-position = Vector2(36, -44)
+position = Vector2(41, -39)
 sprite_frames = SubResource("SpriteFrames_ruocb")
 frame = 49
 frame_progress = 1.0

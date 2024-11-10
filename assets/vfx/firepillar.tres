@@ -149,7 +149,7 @@ region = Rect2(2240, 0, 64, 85)
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 40.0,
 "texture": null
 }, {
 "duration": 1.0,

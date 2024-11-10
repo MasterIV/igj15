@@ -33,6 +33,7 @@ func typing(text: String):
 	pass
 	
 func die():
+	label.text = ""
 	sprite.animation = "die"
 	fireanimation.play()
 
