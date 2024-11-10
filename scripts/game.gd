@@ -17,6 +17,12 @@ var hp: int = 100
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+	
+func end():
+	attack_timer.stop()
+	input.visible = false
+	for u in units:
+		u.disable()
 
 func _on_line_edit_text_changed(new_text: String) -> void:
 	for unit in units:
@@ -25,6 +31,12 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 			unit.trigger(enemy.harm(unit.name))
 			dragon_health.value = enemy.get_health()
 			input.text = ""
+			
+			if enemy.get_health() <= 0:
+				victory_timer.start()
+				enemy.die()
+				end()
+				
 
 func _on_attack_timer_timeout() -> void:
 	hp -= 5
@@ -32,13 +44,11 @@ func _on_attack_timer_timeout() -> void:
 	
 	if hp <= 0:
 		for unit in units:
-			unit.available = false
 			unit.die()
 			
 		enemy.breath()
 		defeat_timer.start()
-		attack_timer.stop()
-		input.visible = false
+		end()
 		
 	else:
 		var type = ["scratch", "bite"].pick_random()

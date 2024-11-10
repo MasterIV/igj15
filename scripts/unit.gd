@@ -31,9 +31,12 @@ func harm(type: String):
 
 func typing(text: String):
 	pass
-	
-func die():
+
+func disable():
+	available = false
 	label.text = ""
+		
+func die():
 	sprite.animation = "die"
 	fireanimation.play()
 

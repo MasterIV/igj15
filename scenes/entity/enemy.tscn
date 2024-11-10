@@ -375,6 +375,7 @@ position = Vector2(0, -14)
 scale = Vector2(-1, 1)
 sprite_frames = ExtResource("2_ah4th")
 autoplay = "default"
+frame_progress = 0.331748
 
 [node name="Icons" type="GridContainer" parent="."]
 anchors_preset = 8

@@ -59,6 +59,9 @@ func breath():
 func get_health():
 	return health
 	
+func die():
+	sprite.animation = "die"
+	
 func harm(type: String) -> bool:
 	if units[type].active < 1:
 		return false
