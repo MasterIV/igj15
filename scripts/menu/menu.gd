@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 func _on_start_button_pressed() -> void:
 	$MainMenu.visible = false
 	$InfoText.visible = false
+	$Logo.visible = false
 	$StartGameText.visible = true
 	$ButtonClicked.play()
 	await get_tree().create_timer(1.0).timeout
