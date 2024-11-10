@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cu46or1lod06o"]
+[gd_scene load_steps=62 format=3 uid="uid://cu46or1lod06o"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_uv08h"]
 [ext_resource type="Texture2D" uid="uid://dps1njc17sslc" path="res://assets/units/dragon_shadow.png" id="2_387a1"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://b5xascy6xcdpx" path="res://assets/snd/dragon_roar.mp3" id="5_o3nim"]
 [ext_resource type="Texture2D" uid="uid://bcasxkhbxua0x" path="res://assets/icons/bard.png" id="6_eqb2p"]
 [ext_resource type="Texture2D" uid="uid://dusfc0ycqn5lv" path="res://assets/vfx/dragon_breath_attack.png" id="9_7m1wf"]
+[ext_resource type="AudioStream" uid="uid://blo25wq8fn4qy" path="res://assets/snd/firetornado.mp3" id="12_rhcmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6ujd"]
 atlas = ExtResource("9_7m1wf")
@@ -424,5 +425,9 @@ stream = ExtResource("4_omibv")
 
 [node name="ScratchSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_o3nim")
+
+[node name="BreathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_rhcmy")
+volume_db = 1.072
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animation_looped"]

@@ -7,6 +7,7 @@ extends Node2D
 	"bite": $BiteSound,
 	"scratch": $ScratchSound
 }
+@onready var breathsound: AudioStreamPlayer2D = $BreathSound
 
 @onready var units: Dictionary = {
 	"Archer": {"active": 0, "icon": $Icons/Archer}, 
@@ -55,6 +56,7 @@ func _process(delta: float) -> void:
 func breath():
 	sprite.animation = "breath"
 	breathanimation.play()
+	breathsound.play()
 
 func get_health():
 	return health
