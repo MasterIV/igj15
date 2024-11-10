@@ -1,3 +1,44 @@
-[gd_scene format=3 uid="uid://bni88woaedfx5"]
+[gd_scene load_steps=4 format=3 uid="uid://bni88woaedfx5"]
+
+[ext_resource type="Texture2D" uid="uid://tskjpd8rd8dx" path="res://assets/ui/victory.png" id="1_aslqh"]
+[ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="2_f44of"]
+[ext_resource type="Script" path="res://scripts/menu/gamewontext.gd" id="3_d1h76"]
 
 [node name="Victory" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 1392.0
+offset_bottom = 906.0
+color = Color(0, 0, 0, 1)
+
+[node name="Victory" type="Sprite2D" parent="."]
+position = Vector2(707, 108)
+scale = Vector2(4, 4)
+texture = ExtResource("1_aslqh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_top = 207.0
+offset_right = 1292.0
+offset_bottom = 860.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f44of")
+theme_override_colors/default_color = Color(0.717647, 0.729412, 0.152941, 1)
+theme_override_colors/font_outline_color = Color(0.534939, 0.133698, 0.0895415, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "You are victorious. You have done something that no one else could achieve. You defeated a mighty Dragon. Your names will forever be sung in song. Future generations will remember you as the Slayers of the Dragon.
+Content, the Heroes return to town. They thank the Bard for the great help and praise the energy he has put into the fight.
+They wish him good luck and never speak to him again."
+fit_content = true
+shortcut_keys_enabled = false
+script = ExtResource("3_d1h76")

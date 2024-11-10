@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d0njccle4an2g"]
+[gd_scene load_steps=38 format=3 uid="uid://d0njccle4an2g"]
 
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="1_od1f6"]
 [ext_resource type="Script" path="res://scripts/menu/gameovertext.gd" id="2_sobkm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://dpull7brvgmlv" path="res://themes/menu_text.tres" id="5_un7ci"]
 [ext_resource type="Script" path="res://scripts/menu/retry_button.gd" id="6_23mvy"]
 [ext_resource type="Texture2D" uid="uid://dyooi2en6vcsc" path="res://assets/units/lute.png" id="7_cyu50"]
+[ext_resource type="AudioStream" uid="uid://b0xjh6olc6i2c" path="res://assets/snd/defeat.mp3" id="8_ff4uc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y78me"]
 atlas = ExtResource("4_cnaom")
@@ -292,5 +293,9 @@ script = ExtResource("6_23mvy")
 position = Vector2(993, 515)
 scale = Vector2(4, 4)
 texture = ExtResource("7_cyu50")
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ff4uc")
+autoplay = true
 
 [connection signal="pressed" from="RetryButton" to="RetryButton" method="_on_pressed"]
