@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=36 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
@@ -21,11 +21,13 @@
 [ext_resource type="AudioStream" uid="uid://b4fmwhdsom8to" path="res://assets/snd/sword_attack.mp3" id="11_cyp66"]
 [ext_resource type="SpriteFrames" uid="uid://cb5li6pwgwmt0" path="res://assets/dragon.tres" id="12_kuip4"]
 [ext_resource type="SpriteFrames" uid="uid://undpvv5wocum" path="res://assets/bard.tres" id="14_01dul"]
-[ext_resource type="AudioStream" uid="uid://cdsjpsfs2owkf" path="res://assets/snd/lightning_strike_1.mp3" id="15_x7852"]
+[ext_resource type="AudioStream" uid="uid://07p70v2cf5yl" path="res://assets/snd/lightning_strike_2.mp3" id="15_yq47f"]
 [ext_resource type="SpriteFrames" uid="uid://w5t3iwuqbrhp" path="res://assets/vfx/dragonharm.tres" id="17_1intl"]
 [ext_resource type="Texture2D" uid="uid://oxchegkh2snu" path="res://assets/ui/health_empty.png" id="18_n107t"]
 [ext_resource type="AudioStream" uid="uid://ckkhanxrmn8tk" path="res://assets/snd/lute.mp3" id="19_2hxwk"]
 [ext_resource type="Texture2D" uid="uid://rpd1beujgebe" path="res://assets/ui/health_full.png" id="19_3uunb"]
+[ext_resource type="AudioStream" uid="uid://c7ti4x5h4o00r" path="res://assets/snd/dragon_bite.mp3" id="23_jes65"]
+[ext_resource type="AudioStream" uid="uid://b5xascy6xcdpx" path="res://assets/snd/dragon_roar.mp3" id="24_kqj2s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_57bai"]
 resource_local_to_scene = true
@@ -156,7 +158,7 @@ z_index = 50
 text = "wizard"
 
 [node name="AttackSound" parent="Units/Wizard" index="5"]
-stream = ExtResource("15_x7852")
+stream = ExtResource("15_yq47f")
 
 [node name="Bard" parent="Units" instance=ExtResource("4_a7tnu")]
 z_index = 40
@@ -216,6 +218,12 @@ columns = 5
 [node name="HarmAnimation" type="AnimatedSprite2D" parent="Enemy"]
 sprite_frames = ExtResource("17_1intl")
 animation = &"Wizard"
+
+[node name="BiteSound" type="AudioStreamPlayer2D" parent="Enemy"]
+stream = ExtResource("23_jes65")
+
+[node name="ScratchSound" type="AudioStreamPlayer2D" parent="Enemy"]
+stream = ExtResource("24_kqj2s")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 anchors_preset = 8

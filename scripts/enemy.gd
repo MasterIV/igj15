@@ -3,7 +3,10 @@ extends Node2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var icons: GridContainer = $Icons
 @onready var harmanimation: AnimatedSprite2D = $HarmAnimation
-
+@onready var attacksounds: Dictionary = {
+	"bite": $BiteSound,
+	"scratch": $ScratchSound
+}
 
 var difficulty: int   = 8
 var units: Dictionary = {
@@ -48,6 +51,7 @@ func harm(type: String) -> bool:
 
 func attack(type: String):
 	sprite.animation = "attack"
+	attacksounds[type].play()
 
 func _on_animation_looped() -> void:
 	if sprite.animation == "attack":
