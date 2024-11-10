@@ -5,6 +5,7 @@ extends Node2D
 @onready var label: RichTextLabel = $RichTextLabel
 @onready var harmanimation: AnimatedSprite2D = $Harm
 @onready var attackanimation: AnimatedSprite2D = $Attack
+@onready var hit_flash: AnimationPlayer = $HitFlash
 
 var data: Dictionary
 var word: String
@@ -23,6 +24,7 @@ func trigger(success: bool):
 
 func harm(type: String):
 	harmanimation.play(type)
+	hit_flash.play("flash")
 	
 func typing(text: String):
 	if text == label.text and text != word:
