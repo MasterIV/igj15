@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dei732lbu1s7t"]
+[gd_scene load_steps=81 format=3 uid="uid://dei732lbu1s7t"]
 
 [ext_resource type="Script" path="res://scripts/menu/menu.gd" id="1_2l6ls"]
 [ext_resource type="Theme" uid="uid://dpull7brvgmlv" path="res://themes/menu_text.tres" id="1_ij171"]
@@ -104,6 +104,20 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="Curve" id="Curve_mdmad"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.989796, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2iyfj"]
+curve = SubResource("Curve_mdmad")
+
+[sub_resource type="Curve" id="Curve_fp0ka"]
+_data = [Vector2(0.193878, 0.969811), 0.0, 0.0, 0, 0, Vector2(0.5, 0.683019), 0.0, 0.0, 0, 0, Vector2(0.853742, 0.0943396), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_06sjd"]
+curve = SubResource("Curve_fp0ka")
+
 [sub_resource type="Curve" id="Curve_lq2uh"]
 min_value = 12.96
 max_value = 70.38
@@ -134,6 +148,13 @@ linear_accel_max = -2.23517e-06
 linear_accel_curve = SubResource("CurveTexture_6r22x")
 radial_accel_min = -2.23517e-06
 radial_accel_max = -2.23517e-06
+scale_min = 0.3
+scale_max = 0.8
+color = Color(0.468938, 0.510545, 0.479405, 1)
+alpha_curve = SubResource("CurveTexture_2iyfj")
+emission_curve = SubResource("CurveTexture_06sjd")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ql5yb"]
 atlas = ExtResource("13_s4b5d")
