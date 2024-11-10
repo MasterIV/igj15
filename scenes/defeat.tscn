@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://d0njccle4an2g"]
+[gd_scene load_steps=37 format=3 uid="uid://d0njccle4an2g"]
 
 [ext_resource type="Theme" uid="uid://p44vwuqmgy7q" path="res://themes/ingame_text.tres" id="1_od1f6"]
 [ext_resource type="Script" path="res://scripts/menu/gameovertext.gd" id="2_sobkm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxpwy5f485p7f" path="res://assets/vfx/wizard_attack.png" id="4_cnaom"]
 [ext_resource type="Theme" uid="uid://dpull7brvgmlv" path="res://themes/menu_text.tres" id="5_un7ci"]
 [ext_resource type="Script" path="res://scripts/menu/retry_button.gd" id="6_23mvy"]
+[ext_resource type="Texture2D" uid="uid://dyooi2en6vcsc" path="res://assets/units/lute.png" id="7_cyu50"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y78me"]
 atlas = ExtResource("4_cnaom")
@@ -226,10 +227,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 229.0
-offset_top = 388.0
-offset_right = 1445.0
-offset_bottom = 516.0
+offset_left = 222.0
+offset_top = 61.0
+offset_right = 1438.0
+offset_bottom = 189.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_od1f6")
@@ -244,47 +245,52 @@ shortcut_keys_enabled = false
 script = ExtResource("2_sobkm")
 
 [node name="Bard" type="Sprite2D" parent="."]
-position = Vector2(383, 590)
+position = Vector2(380, 327)
 scale = Vector2(4, 4)
 texture = ExtResource("3_i1tx4")
 hframes = 17
 frame = 16
 
 [node name="Archer" type="Sprite2D" parent="."]
-position = Vector2(555, 640)
+position = Vector2(552, 377)
 scale = Vector2(4, 4)
 texture = ExtResource("3_i1tx4")
 hframes = 17
 frame = 16
 
 [node name="Warrior" type="Sprite2D" parent="."]
-position = Vector2(751, 560)
+position = Vector2(748, 297)
 scale = Vector2(4, 4)
 texture = ExtResource("3_i1tx4")
 hframes = 17
 frame = 16
 
 [node name="Wizard" type="Sprite2D" parent="."]
-position = Vector2(1024, 660)
+position = Vector2(1021, 397)
 scale = Vector2(4, 4)
 texture = ExtResource("3_i1tx4")
 hframes = 17
 frame = 16
 
 [node name="lightning" type="AnimatedSprite2D" parent="."]
-position = Vector2(792, 640)
+position = Vector2(789, 377)
 sprite_frames = SubResource("SpriteFrames_ep2jh")
 autoplay = "default"
 frame_progress = 0.447842
 
 [node name="RetryButton" type="Button" parent="."]
-offset_left = 424.0
-offset_top = 22.0
-offset_right = 973.0
-offset_bottom = 102.0
+offset_left = 426.0
+offset_top = 776.0
+offset_right = 975.0
+offset_bottom = 856.0
 theme = ExtResource("5_un7ci")
 theme_override_font_sizes/font_size = 88
 text = "Click here to retry"
 script = ExtResource("6_23mvy")
+
+[node name="lute" type="Sprite2D" parent="."]
+position = Vector2(993, 515)
+scale = Vector2(4, 4)
+texture = ExtResource("7_cyu50")
 
 [connection signal="pressed" from="RetryButton" to="RetryButton" method="_on_pressed"]
