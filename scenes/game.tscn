@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c8irw7j810yum"]
+[gd_scene load_steps=35 format=3 uid="uid://c8irw7j810yum"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_m2d46"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="1_xq41r"]
@@ -12,7 +12,6 @@
 [ext_resource type="Shader" uid="uid://nltinbl0i81g" path="res://scenes/entity/hit_flash.tres" id="6_51yh7"]
 [ext_resource type="JSON" path="res://data/warrior.json" id="6_ca1rp"]
 [ext_resource type="SpriteFrames" uid="uid://x0oba8hy47te" path="res://assets/warrior.tres" id="6_i1h1i"]
-[ext_resource type="SpriteFrames" path="res://assets/units/empty_attack.tres" id="7_6i45f"]
 [ext_resource type="JSON" path="res://data/wizard.json" id="7_mn1pt"]
 [ext_resource type="JSON" path="res://data/bard.json" id="7_nlrmn"]
 [ext_resource type="AudioStream" uid="uid://bnuai16ona3bo" path="res://assets/snd/arrow_strike.mp3" id="7_vciw6"]
@@ -20,11 +19,13 @@
 [ext_resource type="SpriteFrames" uid="uid://c3h4ug80aqnxq" path="res://assets/wizard.tres" id="9_bpfvk"]
 [ext_resource type="SpriteFrames" uid="uid://bweds27nfr173" path="res://assets/vfx/wizard_attack.tres" id="10_lpdoi"]
 [ext_resource type="AudioStream" uid="uid://b4fmwhdsom8to" path="res://assets/snd/sword_attack.mp3" id="11_cyp66"]
+[ext_resource type="SpriteFrames" uid="uid://bfkbr8kobnjjq" path="res://assets/vfx/warrior_attack.tres" id="11_wvp0r"]
 [ext_resource type="SpriteFrames" uid="uid://undpvv5wocum" path="res://assets/bard.tres" id="14_01dul"]
 [ext_resource type="AudioStream" uid="uid://07p70v2cf5yl" path="res://assets/snd/lightning_strike_2.mp3" id="15_yq47f"]
 [ext_resource type="Texture2D" uid="uid://oxchegkh2snu" path="res://assets/ui/health_empty.png" id="18_n107t"]
 [ext_resource type="AudioStream" uid="uid://ckkhanxrmn8tk" path="res://assets/snd/lute.mp3" id="19_2hxwk"]
 [ext_resource type="Texture2D" uid="uid://rpd1beujgebe" path="res://assets/ui/health_full.png" id="19_3uunb"]
+[ext_resource type="SpriteFrames" uid="uid://dtkx06drvut2m" path="res://assets/vfx/bard_attack.tres" id="20_hks6t"]
 [ext_resource type="PackedScene" uid="uid://cu46or1lod06o" path="res://scenes/entity/enemy.tscn" id="21_m3wjm"]
 [ext_resource type="Texture2D" uid="uid://dydqyydamep8w" path="res://assets/ui/health_empty_dragon.png" id="26_o0fim"]
 [ext_resource type="Texture2D" uid="uid://cb25ffxi2vs8d" path="res://assets/ui/health_full_dragon.png" id="27_wy57o"]
@@ -124,13 +125,17 @@ z_index = 25
 
 [node name="Attack" parent="Units/Warrior" index="1"]
 z_index = 21
-sprite_frames = ExtResource("7_6i45f")
+position = Vector2(-27, 2)
+scale = Vector2(-1, 1)
+sprite_frames = ExtResource("11_wvp0r")
+frame = 21
+frame_progress = 1.0
 
 [node name="AnimatedSprite2D" parent="Units/Warrior" index="2"]
 z_index = 23
 material = SubResource("ShaderMaterial_hpgb3")
 sprite_frames = ExtResource("6_i1h1i")
-frame_progress = 0.568818
+frame_progress = 0.479839
 
 [node name="RichTextLabel" parent="Units/Warrior" index="3"]
 z_index = 50
@@ -179,7 +184,9 @@ z_index = 45
 
 [node name="Attack" parent="Units/Bard" index="1"]
 z_index = 44
-sprite_frames = ExtResource("7_6i45f")
+sprite_frames = ExtResource("20_hks6t")
+frame = 34
+frame_progress = 1.0
 
 [node name="AnimatedSprite2D" parent="Units/Bard" index="2"]
 z_index = 41
